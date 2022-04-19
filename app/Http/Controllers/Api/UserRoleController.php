@@ -66,9 +66,8 @@ class UserRoleController extends ApiController
     public function update(RoleRequest $request,Role $role)
     {
         try {
-            $permissions = Permission::findMany($request->permissions);
             $role->update(['name' => $request->name]);
-            $role->givePermissionTo($permissions);
+            $role->syncPermissions($request->permissions);
             return $this->sendResponse(new RoleResource($role));
         } catch (\Throwable $th) {
             return $this->sendErrorResponse($th->getMessage(), $th->getCode());
