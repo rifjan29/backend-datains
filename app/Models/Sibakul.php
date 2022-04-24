@@ -15,4 +15,7 @@ class Sibakul extends Model
      * @var string
      */
     protected $connection= 'sibakul';
+    protected $table = "";
+    protected $fillable =[''];
+
 }
