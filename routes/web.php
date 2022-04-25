@@ -59,9 +59,9 @@ Route::get('api/sibakul/ukm/laporanlima', [App\Http\Controllers\Sibakul\Ukm\Lapo
 Route::get('api/sibakul/ukm/laporanenam', [App\Http\Controllers\Sibakul\Ukm\LaporanEnamController::class, 'index'])->name('api.sibakul');
 
 /* UKM */
-Route::get('api/sibakul/koperasi', [App\Http\Controllers\Sibakul\Koperasi\KoperasiController::class, 'index'])->name('api.sibakul');
-Route::get('api/sibakul/koperasi/kelompok', [App\Http\Controllers\Sibakul\Koperasi\KelompokController::class, 'index'])->name('api.sibakul');
-Route::get('api/sibakul/koperasi/jenis', [App\Http\Controllers\Sibakul\Koperasi\JenisController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/koperasi', [App\Http\Controllers\Sibakul\koperasi\KoperasiController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/koperasi/kelompok', [App\Http\Controllers\Sibakul\koperasi\KelompokController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/koperasi/jenis', [App\Http\Controllers\Sibakul\koperasi\JenisController::class, 'index'])->name('api.sibakul');
 
 /* Publik */
 Route::get('api/sibakul/publik/all', [App\Http\Controllers\Sibakul\Publik\AllController::class, 'index'])->name('api.sibakul');
