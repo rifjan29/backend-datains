@@ -29,6 +29,7 @@ class LaporanEnamController extends Controller
             ],
             [ 
                 'uraian' => $value['uraian'],
+                'jml_trans' => $value['jml_trans'],
                 'nilai_ongkir' => $value['nilai_ongkir'],
                 'nilai_trans' => $value['nilai_trans'],
                 'ratanilai_trans' => $value['ratanilai_trans'],
