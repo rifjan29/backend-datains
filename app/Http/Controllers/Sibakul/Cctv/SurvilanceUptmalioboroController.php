@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Sibakul\Cctv;
 
 use App\Http\Controllers\Controller;
-use App\Models\Sibakul\Cctv\Uptmalioboro;
+use App\Models\Sibakul\Cctv\UptMalioboro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -17,7 +17,7 @@ class SurvilanceUptmalioboroController extends Controller
 
         foreach ($data['data'] as $value ) {
             
-            Uptmalioboro::updateOrCreate([
+            UptMalioboro::updateOrCreate([
                 'type'=> $value['type'],
                 'idc'=> $value['id']
             ],
