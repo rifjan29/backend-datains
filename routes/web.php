@@ -69,3 +69,13 @@ Route::get('api/sibakul/publik/all', [App\Http\Controllers\Sibakul\Publik\AllCon
 /* E_Lapor */
 Route::get('api/sibakul/elapor/list', [App\Http\Controllers\Sibakul\E_lapor\ListSkpdController::class, 'index'])->name('api.sibakul');
 Route::get('api/sibakul/elapor/koordinat', [App\Http\Controllers\Sibakul\E_lapor\KoordinatController::class, 'index'])->name('api.sibakul');
+
+/* CCTV */
+Route::get('api/sibakul/cctv', [App\Http\Controllers\Sibakul\Cctv\SurvilanceController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/cctv/bantul', [App\Http\Controllers\Sibakul\Cctv\SurvilanceBantulController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/cctv/kominfosleman', [App\Http\Controllers\Sibakul\Cctv\SurvilanceKominfoslemanController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/cctv/kota', [App\Http\Controllers\Sibakul\Cctv\SurvilanceKotaController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/cctv/kp', [App\Http\Controllers\Sibakul\Cctv\SurvilanceKpController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/cctv/sleman', [App\Http\Controllers\Sibakul\Cctv\SurvilanceSlemanController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/cctv/sungai', [App\Http\Controllers\Sibakul\Cctv\SurvilanceSungaiController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/cctv/uptmalioboro', [App\Http\Controllers\Sibakul\Cctv\SurvilanceUptmalioboroController::class, 'index'])->name('api.sibakul');
