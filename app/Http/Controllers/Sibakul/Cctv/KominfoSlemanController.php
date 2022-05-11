@@ -6,14 +6,14 @@ use App\Models\Sibakul\Cctv\Relationships;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class SurvilanceRelationshipsController extends Controller
+class KominfoSlemanController extends Controller
 {
     public function index()
     {
 
 
-        $url1 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/b7fa9241-78e5-4dde-8d59-3a3806a10586/cctvs?page%5Bnumber%5D=1&page%5Bsize%5D=15";
-        $url2 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/b7fa9241-78e5-4dde-8d59-3a3806a10586/cctvs?page%5Bnumber%5D=2&page%5Bsize%5D=15";
+        $url1 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/22a10e39-b9be-4686-bbd5-428ee45f1fec/cctvs?page%5Bnumber%5D=1&page%5Bsize%5D=15";
+        $url2 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/22a10e39-b9be-4686-bbd5-428ee45f1fec/cctvs?page%5Bnumber%5D=2&page%5Bsize%5D=15";
         $url3 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/b7fa9241-78e5-4dde-8d59-3a3806a10586/cctvs?page%5Bnumber%5D=3&page%5Bsize%5D=15";
         $url4 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/b7fa9241-78e5-4dde-8d59-3a3806a10586/cctvs?page%5Bnumber%5D=4&page%5Bsize%5D=15";
 
@@ -31,7 +31,7 @@ class SurvilanceRelationshipsController extends Controller
             ],
             [
                 'idc' => $value['id'],
-                'location' => 'atcs',
+                'location' => 'kominfo-sleman',
                 'name' => $value['attributes']['name'],
                 'stream-url' => $value['attributes']['stream-url'],
                 'stream-thumbnail' => $value['attributes']['stream-thumbnail']['360p'],
@@ -40,6 +40,7 @@ class SurvilanceRelationshipsController extends Controller
             ]);
 
         }
+
         foreach ($data2[$key] as $value ) {
             
             Relationships::updateOrCreate([
@@ -48,41 +49,7 @@ class SurvilanceRelationshipsController extends Controller
             ],
             [
                 'idc' => $value['id'],
-                'location' => 'atcs',
-                'name' => $value['attributes']['name'],
-                'stream-url' => $value['attributes']['stream-url'],
-                'stream-thumbnail' => $value['attributes']['stream-thumbnail']['360p'],
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-
-        }
-        foreach ($data3[$key] as $value ) {
-            
-            Relationships::updateOrCreate([
-                'idc'=> $value['id'],
-                'name'=> $value['attributes']['name']
-            ],
-            [
-                'idc' => $value['id'],
-                'location' => 'atcs',
-                'name' => $value['attributes']['name'],
-                'stream-url' => $value['attributes']['stream-url'],
-                'stream-thumbnail' => $value['attributes']['stream-thumbnail']['360p'],
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-
-        }
-        foreach ($data4[$key] as $value ) {
-            
-            Relationships::updateOrCreate([
-                'idc'=> $value['id'],
-                'name'=> $value['attributes']['name']
-            ],
-            [
-                'idc' => $value['id'],
-                'location' => 'atcs',
+                'location' => 'kominfo-sleman',
                 'name' => $value['attributes']['name'],
                 'stream-url' => $value['attributes']['stream-url'],
                 'stream-thumbnail' => $value['attributes']['stream-thumbnail']['360p'],

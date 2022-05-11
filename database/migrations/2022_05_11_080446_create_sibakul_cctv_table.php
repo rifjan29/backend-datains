@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::connection('sibakul')->create('sibakul_cctv', function (Blueprint $table) {
             $table->id();
             $table->string('idc')->nullable();
+            $table->string('location')->nullable();
             $table->string('name')->nullable();
             $table->string('stream-url')->nullable();
             $table->string('stream-thumbnail')->nullable();

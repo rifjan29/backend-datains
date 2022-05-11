@@ -10,5 +10,5 @@ class Relationships extends Model
     use HasFactory;
     protected $connection= 'sibakul';
     protected $table = "sibakul_cctv";
-    protected $fillable =['idc','name','stream-url','stream-thumbnail'];
+    protected $fillable =['idc','location','name','stream-url','stream-thumbnail'];
 }
