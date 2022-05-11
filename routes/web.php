@@ -79,3 +79,4 @@ Route::get('api/sibakul/cctv/kp', [App\Http\Controllers\Sibakul\Cctv\SurvilanceK
 Route::get('api/sibakul/cctv/sleman', [App\Http\Controllers\Sibakul\Cctv\SurvilanceSlemanController::class, 'index'])->name('api.sibakul');
 Route::get('api/sibakul/cctv/sungai', [App\Http\Controllers\Sibakul\Cctv\SurvilanceSungaiController::class, 'index'])->name('api.sibakul');
 Route::get('api/sibakul/cctv/uptmalioboro', [App\Http\Controllers\Sibakul\Cctv\SurvilanceUptmalioboroController::class, 'index'])->name('api.sibakul');
+Route::get('api/sibakul/cctv/relationships', [App\Http\Controllers\Sibakul\Cctv\SurvilanceRelationshipsController::class, 'index'])->name('api.sibakul');
