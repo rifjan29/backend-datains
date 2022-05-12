@@ -12,7 +12,7 @@ class SungaiController extends Controller
     {
 
 
-        $url1 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/ecf3fc05-9747-42fd-8529-5be75fc4f0ac/cctvs";
+        $url1 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/1a5fdb62-8fe9-4a79-a880-edfc601a027b/cctvs";
         $url2 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/b7fa9241-78e5-4dde-8d59-3a3806a10586/cctvs?page%5Bnumber%5D=2&page%5Bsize%5D=15";
         $url3 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/b7fa9241-78e5-4dde-8d59-3a3806a10586/cctvs?page%5Bnumber%5D=3&page%5Bsize%5D=15";
         $url4 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications/b7fa9241-78e5-4dde-8d59-3a3806a10586/cctvs?page%5Bnumber%5D=4&page%5Bsize%5D=15";
