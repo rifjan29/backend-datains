@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\MenuController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\UserPermissionController;
 use App\Http\Controllers\Api\UserRoleController;
+use App\Http\Controllers\Api\PermissionController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function() {
     Route::get('menus/flat', [MenuController::class, 'flatMenu']);
     Route::resource('menus', MenuController::class);
+    Route::resource('users/roles', UserRoleController::class);
+    Route::resource('permissions', PermissionController::class);
 
     Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::get('users/me', function(Request $request) {
@@ -39,13 +42,12 @@ Route::group(['prefix' => 'v1'], function() {
             }
 
             return [
-                'email' => $user->email, 
-                'name' => $user->name, 
-                'role' => $roles, 
-                'permissions' => $permissions 
+                'email' => $user->email,
+                'name' => $user->name,
+                'role' => $roles,
+                'permissions' => $permissions
             ];
         });
-        Route::resource('users/roles', UserRoleController::class);
         Route::get('users/permissions', UserPermissionController::class);
         Route::resource('users', UserController::class);
     });
