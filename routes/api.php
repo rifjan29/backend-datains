@@ -24,8 +24,6 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function() {
     Route::get('menus/flat', [MenuController::class, 'flatMenu']);
     Route::resource('menus', MenuController::class);
-    Route::resource('users/roles', UserRoleController::class);
-    Route::resource('permissions', PermissionController::class);
 
     Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::get('users/me', function(Request $request) {
@@ -48,7 +46,9 @@ Route::group(['prefix' => 'v1'], function() {
                 'permissions' => $permissions
             ];
         });
+        Route::resource('users/roles', UserRoleController::class);
         Route::get('users/permissions', UserPermissionController::class);
         Route::resource('users', UserController::class);
+        Route::resource('permissions', PermissionController::class);
     });
 });
