@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\UserPermissionController;
 use App\Http\Controllers\Api\UserRoleController;
 use App\Http\Controllers\Api\PermissionController;
+use App\Http\Controllers\Api\CctvController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -50,5 +51,6 @@ Route::group(['prefix' => 'v1'], function() {
         Route::get('users/permissions', UserPermissionController::class);
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);
+        Route::get('cctv',CctvController::class);
     });
 });

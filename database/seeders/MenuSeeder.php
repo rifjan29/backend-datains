@@ -45,26 +45,52 @@ class MenuSeeder extends Seeder
             'berdasarkan lokasi'
         ];
         $this->create_child_menu($elapor, $parentELapor);
-        
+
         $parentSurveillance = $this->create_parent_menu('Dashboard Surveillance');
-        $cctv = [
-            'atcs',
-            'atcs kota',
-            'cctv bantul',
-            'cctv kp',
-            'cctv public',
-            'cctv sleman',
-            'cctv sungai',
-            'cctv uptmalioboro'
-        ];
-        $this->create_child_menu($cctv, $parentSurveillance);
-        
+        Menu::create([
+            'name' => 'atcs',
+            'source' => 'cctv.atcs',
+        ],$parentSurveillance);
+        Menu::create([
+            'name' => 'atcs kota',
+            'source' => 'cctv.atcs-kota',
+        ],$parentSurveillance);
+        Menu::create([
+            'name' => 'cctv bantul',
+            'source' => 'cctv.bantul',
+        ],$parentSurveillance);
+        Menu::create([
+            'name' => 'cctv kp',
+            'source' => 'cctv.kp',
+        ],$parentSurveillance);
+        Menu::create([
+            'name' => 'cctv public',
+            'source' => 'cctv.public',
+        ],$parentSurveillance);
+        Menu::create([
+            'name' => 'cctv sleman',
+            'source' => 'cctv.sleman',
+        ],$parentSurveillance);
+        Menu::create([
+            'name' => 'cctv sungai',
+            'source' => 'cctv.sungai',
+        ],$parentSurveillance);
+        Menu::create([
+            'name' => 'cctv uptmalioboro',
+            'source' => 'cctv.uptmalioboro',
+        ],$parentSurveillance);
+        Menu::create([
+            'name' => 'kominfo sleman',
+            'source' => 'cctv.kominfo-sleman',
+        ],$parentSurveillance);
+
+
         $parentLand = $this->create_parent_menu('Dashboard Pertanahan');
         $land = [
             'pertanahan'
         ];
         $this->create_child_menu($land, $parentLand);
-        
+
         $parentTataRuang = $this->create_parent_menu('Dashboard Tata Ruang');
         $tataRuang = [
             'rencana pola ruang',
@@ -72,7 +98,7 @@ class MenuSeeder extends Seeder
             'kawasan strategis provinsi'
         ];
         $this->create_child_menu($tataRuang, $parentTataRuang);
-        
+
         $parentSimnangkis = $this->create_parent_menu('Simnangkis');
         $simnangkis = [
             'air minum',
@@ -92,7 +118,7 @@ class MenuSeeder extends Seeder
             'sumber penerangan'
         ];
         $this->create_child_menu($simnangkis, $parentSimnangkis);
-        
+
         $parentKesehatan = $this->create_parent_menu('Dashboard Kesehatan');
         $kesehatan = [
             'sebaran covid-19',
@@ -101,7 +127,7 @@ class MenuSeeder extends Seeder
             'info vaksin'
         ];
         $this->create_child_menu($kesehatan, $parentKesehatan);
-        
+
         $parentKetertiban = $this->create_parent_menu('Dashboard Ketertiban');
         $ketertiban = [
             'ketertiban umum',
@@ -110,7 +136,7 @@ class MenuSeeder extends Seeder
             'penegakan perda'
         ];
         $this->create_child_menu($ketertiban, $parentKetertiban);
-        
+
         $parentDiskopUkm = $this->create_parent_menu('Dashboard Diskop Ukm');
         $ukm = [
             'summary koperasi',
@@ -120,7 +146,7 @@ class MenuSeeder extends Seeder
             'peta ukm'
         ];
         $this->create_child_menu($ukm, $parentDiskopUkm);
-        
+
         $parentDisnaker = $this->create_parent_menu('Dashboard Disnaker Trans');
         $disnaker = [
             'angkatan kerja',
