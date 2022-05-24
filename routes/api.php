@@ -25,6 +25,13 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function() {
     Route::get('menus/flat', [MenuController::class, 'flatMenu']);
     Route::resource('menus', MenuController::class);
+    Route::get('ticket', function() {
+        $abc = Http::asForm()->post('https://tableau.datains.id/trusted', [
+            "username" => "admin",
+        ]);
+
+        return $abc->body();
+    });
 
     Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::get('users/me', function(Request $request) {
