@@ -32,6 +32,7 @@ Route::group(['prefix' => 'v1'], function() {
 
         return $abc->body();
     });
+    Route::get('cctv',CctvController::class);
 
     Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::get('users/me', function(Request $request) {
@@ -58,6 +59,5 @@ Route::group(['prefix' => 'v1'], function() {
         Route::get('users/permissions', UserPermissionController::class);
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);
-        Route::get('cctv',CctvController::class);
     });
 });
