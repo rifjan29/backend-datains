@@ -6,7 +6,7 @@ use App\Http\Controllers\Api\UserPermissionController;
 use App\Http\Controllers\Api\UserRoleController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\CctvController;
-
+use App\Http\Controllers\Api\ConfigController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +32,7 @@ Route::group(['prefix' => 'v1'], function() {
 
         return $abc->body();
     });
-    Route::get('cctv',CctvController::class);
+    Route::get('cctv', CctvController::class);
 
     Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::get('users/me', function(Request $request) {
@@ -60,4 +60,7 @@ Route::group(['prefix' => 'v1'], function() {
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);
     });
+    // Route::resource('config', ConfigController::class, ['except' => ['index']]);
+    Route::get('config', ConfigController::class);
+    Route::post('config/{config}',[ConfigController::class, 'update']);
 });
