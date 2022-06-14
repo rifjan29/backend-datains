@@ -24,6 +24,7 @@ class MenuController extends Controller
                 'name' => $node->name,
                 'status' => $node->status,
                 'source' => $node->source,
+                'description' => $node->description,
                 'children' => $node->children,
             ];
         };
@@ -53,6 +54,7 @@ class MenuController extends Controller
             'name' => $request->name,
             'status' => $request->status,
             'source' => $request->source,
+            'description' => $request->description,
             'parent_id' => $request->parent_id,
         ]);
 
@@ -76,6 +78,7 @@ class MenuController extends Controller
             'name' => $request->name,
             'status' => $request->status,
             'source' => $request->source,
+            'description' => $request->description,
             'parent_id' => $request->parent_id,
         ]);
 
