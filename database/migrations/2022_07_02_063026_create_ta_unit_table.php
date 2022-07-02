@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::connection('siap')->create('ta_absen', function (Blueprint $table) {
-            $table->string('nip')->nullable();
-            $table->date('tgl_masuk')->nullable();
-            $table->string('kode_absen')->nullable();
-            $table->string('kode_range')->nullable();
-            $table->string('jam_masuk')->nullable();
-            $table->string('jam_keluar')->nullable();
-            $table->string('isi_manual')->nullable();
+        Schema::connection('siap')->create('ta_unit', function (Blueprint $table) {
+            $table->string('kode_unit')->nullable();
+            $table->string('nama_unit')->nullable();
+            $table->string('kode_cabang')->nullable();
+            $table->string('aktif')->nullable();
+            $table->string('mulai')->nullable();
+            $table->string('sampai')->nullable();
             $table->string('waktu_simpan')->nullable();
             $table->timestamps();
         });
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ta_absen');
+        Schema::dropIfExists('ta_unit');
     }
 };
