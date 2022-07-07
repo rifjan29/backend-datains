@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Http;
 class PublicController extends Controller
 {
     public function index()
-    {
+    { 
 
 
         $url1 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications";
@@ -55,7 +55,7 @@ class PublicController extends Controller
                 'stream-thumbnail' => $value['attributes']['stream-thumbnail']['360p'],
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]);
+            ]); 
         }        
     }
 }

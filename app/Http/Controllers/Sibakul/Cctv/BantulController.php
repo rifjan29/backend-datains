@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class BantulController extends Controller
 {
-    public function index()
+    public function index() 
     {
 
 /*

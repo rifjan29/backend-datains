@@ -10,7 +10,7 @@ class KpController extends Controller
 {
     public function index()
     {
-
+ 
 
         $url1 = "https://mam.jogjaprov.go.id/api/v1/cctvapplications";
         $data1 = json_decode(file_get_contents($url1), true);
