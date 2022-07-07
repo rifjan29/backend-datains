@@ -18,6 +18,7 @@ class CctvResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'location' => $this->location,
+            'connection' => $this->connection,
             'url' => $this->{"stream-url"},
         ];
     }
