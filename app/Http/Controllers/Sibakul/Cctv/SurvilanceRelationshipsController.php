@@ -48,7 +48,7 @@ class SurvilanceRelationshipsController extends Controller
             ],
             [
                 'idc' => $value['id'],
-                'location' => 'atcs',
+                'location' => 'cctv-atcs',
                 'name' => $value['attributes']['name'],
                 'connection'=> $konek,
                 'stream-url' => $value['attributes']['stream-url'],
