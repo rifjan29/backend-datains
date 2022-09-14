@@ -30,7 +30,7 @@ class ConfigController extends Controller
 				'site_logo' => $logoDir->getPathname()
 			]);
 	    }
-        $config->update($request->only('site_name','site_title','site_desc','color'));
+        $config->update($request->only('site_name','site_title','site_desc','color', 'dashboard_url'));
         return response()->json([
             'succes' => true,
             'message' => 'Config Updated',

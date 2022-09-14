@@ -21,6 +21,7 @@ class ConfigResource extends JsonResource
             'site_desc' => $this->site_desc,
             'site_logo' => $this->site_logo,
             'color' => $this->color,
+            'dashboard_url' => $this->dashboard_url,
         ];
     }
 }
