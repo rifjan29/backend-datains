@@ -7,6 +7,8 @@ use App\Http\Controllers\Api\UserRoleController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\CctvController;
 use App\Http\Controllers\Api\ConfigController;
+use App\Http\Controllers\Api\DatasetController;
+use App\Http\Controllers\Api\DatasetFileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,11 +25,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'v1'], function() {
+    // dataset menu
+    Route::resource('dataset',DatasetController::class);
+    // dataset file
+    Route::resource('file-dataset',DatasetFileController::class);
     Route::get('menus/flat', [MenuController::class, 'flatMenu']);
     Route::resource('menus', MenuController::class);
     Route::get('ticket', function() {
         $abc = Http::asForm()->post('https://tableau.datains.id/trusted', [
-            "username" => "admin",
+            "username" => "Datains",
         ]);
 
         return $abc->body();
