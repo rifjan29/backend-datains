@@ -25,4 +25,12 @@ class GetDatasetController extends Controller
             ],Response::HTTP_BAD_REQUEST);
         };
     }
+
+    public function download($id)
+    {
+        $data = FileDataset::find($id);
+        $file_path = public_path('file/'.$data->file);
+        return response()->download($file_path);
+
+    }
 }
