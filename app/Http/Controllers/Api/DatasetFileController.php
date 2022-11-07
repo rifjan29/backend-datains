@@ -4,8 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\FileDataset;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use Validator;
 
 class DatasetFileController extends Controller
 {
@@ -17,15 +21,16 @@ class DatasetFileController extends Controller
     public function index()
     {
         $data = FileDataset::latest()->get();
-        if (count($data) > 0) {
+        if (count($data) > 0 ) {
             return response()->json([
-                'message' => 'Data tidak ada',
+                'message' => 'Berhasil mendapatkan data',
+                'data' => $data
+            ],Response::HTTP_OK);
+        }else{
+            return response()->json([
+                'message' => 'Tidak ada data',
             ],Response::HTTP_BAD_REQUEST);
         };
-        return response()->json([
-            'message' => 'Berhasil menampilkan data',
-            'data' => $data
-        ],Response::HTTP_OK);
     }
 
     /**
@@ -35,7 +40,6 @@ class DatasetFileController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -46,7 +50,40 @@ class DatasetFileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = Validator($request->all(),[
+            'file' => 'required|mimes:doc,docx,pdf,txt,csv',
+            'name' => 'required',
+            'id_dataset' => 'required',
+        ]);
+        if ($validate->fails()) {
+            return response()->json($validate->errors(), Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+        try {
+            $add = new FileDataset;
+            $add->title = $request->get('name');
+            $file_upload = $request->file('file');
+            if (isset($file_upload)) {
+                $filename = date('His').'.'.$request->file('file')->extension();
+                $path = public_path('file/');
+                if ($file_upload->move($path,$filename)) {
+                    $add->file = $filename;
+                }
+            }
+            $add->path = url('path');
+            $add->ket = $request->get('ket');
+            $add->id_dataset = (int)$request->get('id_dataset');
+            $add->save();
+            $response = [
+                'message' => 'data dataset file create',
+                'data' => $add
+            ];
+            return response()->json($response,Response::HTTP_CREATED);
+        } catch (QueryException $e) {
+            return response()->json([
+                'message' => "failed" . $e->errorInfo,
+
+            ]);
+        }
     }
 
     /**
@@ -68,7 +105,17 @@ class DatasetFileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = FileDataset::find($id);
+        if ($data == null) {
+            return response()->json([
+                'message' => 'Data tidak ada.',
+            ],Response::HTTP_BAD_REQUEST);
+        }
+
+        return response()->json([
+            'message' => 'Berhasil mendapatkan data',
+            'data' => $data,
+        ], Response::HTTP_OK);
     }
 
     /**
@@ -80,7 +127,44 @@ class DatasetFileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate = Validator($request->all(),[
+            'name' => 'required',
+        ]);
+        if ($validate->fails()) {
+            return response()->json($validate->errors(), Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+        try {
+            $update = FileDataset::find($id);
+            $update->title = $request->get('name');
+            $file_upload = $request->file('file');
+            if (isset($file_upload)) {
+                $file_path = public_path().'/file/'.$update->file;
+                unlink($file_path);
+                $filename = date('His').'.'.$request->file('file')->extension();
+                // return $filename;
+                $path = public_path('file/');
+                if ($file_upload->move($path,$filename)) {
+                    // return 'berhasil';
+                    $update->file = $filename;
+                }
+            }
+            $update->path = url('path');
+            $update->ket = $request->get('ket');
+            if ($request->get('id_dataset') != null) {
+                $update->id_dataset = (int)$request->get('id_dataset');
+            }
+            $update->update();
+            $response = [
+                'message' => 'data dataset file update',
+                'data' => $update
+            ];
+            return response()->json($response,Response::HTTP_CREATED);
+        } catch (QueryException $e) {
+            return response()->json([
+                'message' => "failed" . $e->errorInfo,
+
+            ]);
+        }
     }
 
     /**
@@ -91,6 +175,17 @@ class DatasetFileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = FileDataset::findOrFail($id);
+        if ($delete == null) {
+            return response()->json([
+                'message' => 'Terjadi Kesalahan',
+            ],Response::HTTP_BAD_REQUEST);
+        };
+        $file_path = public_path().'/file/'.$delete->file;
+        unlink($file_path);
+        $delete->delete();
+        return response()->json([
+            'message' => 'Berhasil menghapus data.'
+        ],Response::HTTP_ACCEPTED);
     }
 }

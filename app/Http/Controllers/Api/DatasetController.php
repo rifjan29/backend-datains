@@ -131,7 +131,7 @@ class DatasetController extends Controller
             $update = MenuDataset::findOrFail($id);
             $update->name = $request->get('name');
             $update->slug = $slug;
-            $update->save();
+            $update->update();
             $response = [
                 'message' => 'data menu dataset update',
                 'data' => $update

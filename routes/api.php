@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\CctvController;
 use App\Http\Controllers\Api\ConfigController;
 use App\Http\Controllers\Api\DatasetController;
 use App\Http\Controllers\Api\DatasetFileController;
+use App\Http\Controllers\Api\GetDatasetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'v1'], function() {
+    // dataset get data
+    Route::get('menu-dataset/{slug}',[GetDatasetController::class,'index'])->name('getdataset.index');
     // dataset menu
     Route::resource('dataset',DatasetController::class);
     // dataset file
