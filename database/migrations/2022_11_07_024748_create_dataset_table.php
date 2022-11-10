@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('dataset', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_dataset')->constrained('menu_dataset')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('title')->nullable();
+            $table->string('name')->nullable();
             $table->string('file')->nullable();
-            $table->text('ket')->nullable();
+            $table->text('desc')->nullable();
             $table->timestamps();
         });
     }

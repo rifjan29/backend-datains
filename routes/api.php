@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function() {
     // dataset get data
     Route::get('download/{id}',[GetDatasetController::class,'download']);
+    Route::get('get-dataset/{id}',[GetDatasetController::class,'getDatasetById']);
     Route::get('menu-dataset/{slug}',[GetDatasetController::class,'index'])->name('getdataset.index');
     Route::post('search',[GetDatasetController::class,'search'])->name('getdataset.search');
     // dataset menu

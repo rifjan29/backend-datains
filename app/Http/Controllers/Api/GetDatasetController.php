@@ -54,4 +54,18 @@ class GetDatasetController extends Controller
             return response()->json([$e],Response::HTTP_BAD_REQUEST);
         }
     }
+    public function getDatasetById($id)
+    {
+        $data = FileDataset::where('id',$id)->get();
+        if (count($data) > 0 ) {
+            return response()->json([
+                'message' => 'Berhasil mendapatkan data',
+                'data' => $data
+            ],Response::HTTP_OK);
+        }else{
+            return response()->json([
+                'message' => 'Tidak ada data',
+            ],Response::HTTP_BAD_REQUEST);
+        };
+    }
 }

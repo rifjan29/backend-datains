@@ -60,7 +60,7 @@ class DatasetFileController extends Controller
         }
         try {
             $add = new FileDataset;
-            $add->title = $request->get('name');
+            $add->name = $request->get('name');
             $file_upload = $request->file('file');
             if (isset($file_upload)) {
                 $filename = date('His').'.'.$request->file('file')->extension();
@@ -70,7 +70,7 @@ class DatasetFileController extends Controller
                 }
             }
             $add->path = url('path');
-            $add->ket = $request->get('ket');
+            $add->desc = $request->get('desc');
             $add->id_dataset = (int)$request->get('id_dataset');
             $add->save();
             $response = [
@@ -135,7 +135,7 @@ class DatasetFileController extends Controller
         }
         try {
             $update = FileDataset::find($id);
-            $update->title = $request->get('name');
+            $update->name = $request->get('name');
             $file_upload = $request->file('file');
             if (isset($file_upload)) {
                 $file_path = public_path().'/file/'.$update->file;
@@ -149,7 +149,7 @@ class DatasetFileController extends Controller
                 }
             }
             $update->path = url('path');
-            $update->ket = $request->get('ket');
+            $update->desc = $request->get('desc');
             if ($request->get('id_dataset') != null) {
                 $update->id_dataset = (int)$request->get('id_dataset');
             }
