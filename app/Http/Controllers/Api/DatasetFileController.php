@@ -69,7 +69,7 @@ class DatasetFileController extends Controller
                     $add->file = $filename;
                 }
             }
-            $add->path = url('path');
+            $add->path = url('file');
             $add->desc = $request->get('desc');
             $add->id_dataset = (int)$request->get('id_dataset');
             $add->save();
