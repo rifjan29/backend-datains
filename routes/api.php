@@ -31,6 +31,7 @@ Route::group(['prefix' => 'v1'], function() {
     Route::get('get-dataset/{id}',[GetDatasetController::class,'getDatasetById']);
     Route::get('menu-dataset/{slug}',[GetDatasetController::class,'index'])->name('getdataset.index');
     Route::post('search',[GetDatasetController::class,'search'])->name('getdataset.search');
+    Route::post('slug',[GetDatasetController::class,'slug'])->name('slug');
     // dataset menu
     Route::resource('dataset',DatasetController::class);
     // dataset file

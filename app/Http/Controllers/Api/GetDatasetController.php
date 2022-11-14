@@ -8,6 +8,7 @@ use App\Models\MenuDataset;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Str;
 
 class GetDatasetController extends Controller
 {
@@ -67,5 +68,15 @@ class GetDatasetController extends Controller
                 'message' => 'Tidak ada data',
             ],Response::HTTP_BAD_REQUEST);
         };
+    }
+    public function slug(Request $req)
+    {
+        $data  = [
+            "title" => ucwords($req->get('slug')),
+            "slug" => Str::slug($req->get('slug'))
+        ];
+        return response()->json([
+            'data' =>$data
+        ]);
     }
 }

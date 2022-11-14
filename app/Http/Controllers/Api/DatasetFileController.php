@@ -127,7 +127,6 @@ class DatasetFileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $request;
         $validate = Validator($request->all(),[
             'name' => 'required',
         ]);
