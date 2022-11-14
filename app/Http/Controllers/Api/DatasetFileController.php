@@ -127,6 +127,7 @@ class DatasetFileController extends Controller
      */
     public function update(Request $request, $id)
     {
+        return $request;
         $validate = Validator($request->all(),[
             'name' => 'required',
         ]);
@@ -134,7 +135,9 @@ class DatasetFileController extends Controller
             return response()->json($validate->errors(), Response::HTTP_UNPROCESSABLE_ENTITY);
         }
         try {
+            // return $request;
             $update = FileDataset::find($id);
+            // return $update;
             $update->name = $request->get('name');
             $file_upload = $request->file('file');
             if (isset($file_upload)) {
@@ -161,7 +164,7 @@ class DatasetFileController extends Controller
             return response()->json($response,Response::HTTP_CREATED);
         } catch (QueryException $e) {
             return response()->json([
-                'message' => "failed" . $e->errorInfo,
+                'message' => "failed" . $e,
 
             ]);
         }
