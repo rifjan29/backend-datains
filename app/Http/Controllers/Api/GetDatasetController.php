@@ -14,18 +14,25 @@ class GetDatasetController extends Controller
 {
     public function index($slug)
     {
-        $id = MenuDataset::where('slug',$slug)->first();
-        $data = FileDataset::where('id_dataset',$id->id)->get();
-        if (count($data) > 0 ) {
-            return response()->json([
-                'message' => 'Berhasil mendapatkan data',
-                'data' => $data
-            ],Response::HTTP_OK);
+        $id = MenuDataset::where('slug',$slug);
+        if (count($id->get()) > 0) {
+            $id = $id->first();
+            $data = FileDataset::where('id_dataset',$id->id)->latest()->get();
+            if (count($data) > 0 ) {
+                return response()->json([
+                    'message' => 'Berhasil mendapatkan data',
+                    'data' => $data
+                ],Response::HTTP_OK);
+            }else{
+                return response()->json([
+                    'message' => 'Tidak ada data',
+                ],Response::HTTP_BAD_REQUEST);
+            };
         }else{
             return response()->json([
-                'message' => 'Tidak ada data',
+                'message' => 'data tidak ditemukan',
             ],Response::HTTP_BAD_REQUEST);
-        };
+        }
     }
 
     public function download($id)
@@ -39,7 +46,7 @@ class GetDatasetController extends Controller
     public function search(Request $request)
     {
         try {
-            $data = FileDataset::where('title','like',"%".$request->get('title')."%")->get();
+            $data = FileDataset::where('title','like',"%".$request->get('title')."%")->latest()->get();
             if (count($data) > 0) {
                 return response()->json([
                     'message' => 'Berhasil mencari data',
@@ -57,7 +64,7 @@ class GetDatasetController extends Controller
     }
     public function getDatasetById($id)
     {
-        $data = FileDataset::where('id',$id)->get();
+        $data = FileDataset::where('id',$id)->latest()->get();
         if (count($data) > 0 ) {
             return response()->json([
                 'message' => 'Berhasil mendapatkan data',

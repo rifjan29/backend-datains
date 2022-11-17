@@ -79,6 +79,7 @@ class DatasetFileController extends Controller
             ];
             return response()->json($response,Response::HTTP_CREATED);
         } catch (QueryException $e) {
+            return $e;
             return response()->json([
                 'message' => "failed" . $e->errorInfo,
 
