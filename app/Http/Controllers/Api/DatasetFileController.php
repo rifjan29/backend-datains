@@ -51,7 +51,7 @@ class DatasetFileController extends Controller
     public function store(Request $request)
     {
         $validate = Validator($request->all(),[
-            'file' => 'required|mimes:doc,docx,pdf,txt,csv',
+            'file' => 'required|mimes:doc,docx,pdf,txt,csv,xlsx,xls',
             'name' => 'required',
             'id_dataset' => 'required',
         ]);
