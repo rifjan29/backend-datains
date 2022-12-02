@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ditops extends Model
 {
     use HasFactory;
-    
+
     /**
     * The connection attribute from config/database.php
     *
@@ -16,5 +16,5 @@ class Ditops extends Model
     */
    protected $connection= 'ditops';
    protected $table = "";
-   protected $fillable =[''];use HasFactory;
+   protected $fillable =[''];
 }

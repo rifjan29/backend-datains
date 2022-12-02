@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\ConfigController;
 use App\Http\Controllers\Api\DatasetController;
 use App\Http\Controllers\Api\DatasetFileController;
 use App\Http\Controllers\Api\GetDatasetController;
+use App\Http\Controllers\Api\MenuStagingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,10 @@ Route::group(['prefix' => 'v1'], function() {
     Route::resource('dataset',DatasetController::class);
     // dataset file
     Route::resource('file-dataset',DatasetFileController::class);
+    // import file
+    Route::get('menu-staging/{name}/{jenis}',[MenuStagingController::class,'getData']);
+    Route::post('upload-data',[MenuStagingController::class,'upload']);
+
     Route::get('menus/flat', [MenuController::class, 'flatMenu']);
     Route::resource('menus', MenuController::class);
     Route::get('ticket', function() {

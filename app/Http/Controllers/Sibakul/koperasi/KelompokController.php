@@ -7,7 +7,7 @@ use App\Models\Sibakul\koperasi\kelompok;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class kelompokController extends Controller
+class KelompokController extends Controller
 {
     public function index()
     {
@@ -17,18 +17,18 @@ class kelompokController extends Controller
             'data' => 'koperasi_Keragaan_Kelompok_Koperasi',
             'limit' => '0,100'
         ]);
-    
+
         $data = $response->json();
 
         $key='koperasi_Keragaan_Kelompok_Koperasi';
-        
+
         foreach ($data[$key] as $value ) {
 
             kelompok::updateOrCreate([
                 'koperasi' => $value['koperasi'],
                 'tahun' => $value['tahun']
             ],
-            [ 
+            [
                 'koperasi' => $value['koperasi'],
                 'yk' => $value['YK'],
                 'volume_usaha' => $value['volume_usaha'],

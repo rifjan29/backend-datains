@@ -20,7 +20,7 @@ class UserController extends ApiController
             ->allowedFilters(['name', 'email'])
             ->paginate()
             ->appends($request->query());
-            
+
         return UserResource::collection($user);
     }
 
@@ -30,7 +30,7 @@ class UserController extends ApiController
     }
 
     public function store(UserRequest $request)
-    {   
+    {
         try {
            $user = User::create([
                 'email' => $request->email,
@@ -50,7 +50,7 @@ class UserController extends ApiController
     }
 
     public function update(UserRequest $request, User $user)
-    {   
+    {
         try {
             $user->update([
                 'email' => $request->email ?? $user->email,
