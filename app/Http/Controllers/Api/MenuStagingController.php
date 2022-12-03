@@ -46,59 +46,81 @@ class MenuStagingController extends Controller
     {
         if ($name == 'kominfo_ditops') {
             if ($jenis == 'bts_ipfr') {
-               $data = DB::connection('ditops')->table('bts_ipfr')->get();
-               return response()->json(['data' => $data],200);
+                   $header = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('bts_ipfr');
+                   $data = DB::connection('ditops')->table('bts_ipfr')->get();
+                return response()->json([
+                                        'header' => $header,
+                                        'data' => $data,
+                                        ],
+                                        200);
             }elseif($jenis == 'data_ipfr'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('data_ipfr');
                 $data = DB::connection('ditops')->table('data_ipfr')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'data_labuh'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('data_labuh');
                 $data = DB::connection('ditops')->table('data_labuh')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'data_pnbp'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('data_pnbp');
                 $data = DB::connection('ditops')->table('data_pnbp')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'iar'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('iar');
                 $data = DB::connection('ditops')->table('iar')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'ikrap'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('ikrap');
                 $data = DB::connection('ditops')->table('ikrap')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'pengunjung_ppt'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('pengunjung_ppt');
                 $data = DB::connection('ditops')->table('pengunjung_ppt')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'radio_dinas_maritim_penerbangan'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('radio_dinas_maritim_penerbangan');
                 $data = DB::connection('ditops')->table('radio_dinas_maritim_penerbangan')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'radio_komunikasi'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('radio_komunikasi');
                 $data = DB::connection('ditops')->table('radio_komunikasi')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'radio_station_frekuensi'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('radio_station_frekuensi');
                 $data = DB::connection('ditops')->table('radio_station_frekuensi')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'radio_station_jenis_penggunaan_frekuensi'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('radio_station_jenis_penggunaan_frekuensi');
                 $data = DB::connection('ditops')->table('radio_station_jenis_penggunaan_frekuensi')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'radio_station_penggunaan_frekuensi'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('radio_station_penggunaan_frekuensi');
                 $data = DB::connection('ditops')->table('radio_station_penggunaan_frekuensi')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'radio_station_pita_frekuensi'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('radio_station_pita_frekuensi');
                 $data = DB::connection('ditops')->table('radio_station_pita_frekuensi')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'reor'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('reor');
                 $data = DB::connection('ditops')->table('reor')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'respon_call'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('respon_call');
                 $data = DB::connection('ditops')->table('respon_call')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'sertifikasi_kecakapan'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('sertifikasi_kecakapan');
                 $data = DB::connection('ditops')->table('sertifikasi_kecakapan')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'sertifikat_reor'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('sertifikat_reor');
                 $data = DB::connection('ditops')->table('sertifikat_reor')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }elseif($jenis == 'statistik_tiket'){
+                $result = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('statistik_tiket');
                 $data = DB::connection('ditops')->table('statistik_tiket')->get();
-                return response()->json(['data' => $data],200);
+                return response()->json(['header' => $result,'data' => $data],200);
             }else{
                 return response()->json([
                     'message' => 'Terjadi kesalahan.',
