@@ -41,7 +41,8 @@
         },
         "files": [
 
-            "app/Helper/MenuStagingHelper.php"
+            "app/Helper/MenuStagingHelper.php",
+            "app/Helper/GetMenuStagingHelper.php"
 
         ]
     },
