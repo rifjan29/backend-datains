@@ -36,9 +36,9 @@ class MenuStagingController extends Controller
             //     return response()->json(['message' => 'terjadi kesalahan',400]);
             // }
         } catch (Exception $e) {
-            return response()->json(['message' => 'terjadi kesalahan', 400]);
+            return response()->json(['message' => [$e->getMessage()], 400]);
         } catch (QueryException $e){
-            return response()->json(['message' => 'terjadi kesalahan', 400]);
+            return response()->json(['message' => [$e->getMessage()], 400]);
         }
     }
 
