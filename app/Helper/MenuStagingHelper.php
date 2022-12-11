@@ -298,6 +298,7 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'adm_assoc') {
+                // return $data;
                  for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('adm_assoc')->insert(
                         ['ntc_id' => $data[$i][0],

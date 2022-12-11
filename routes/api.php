@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\DatasetController;
 use App\Http\Controllers\Api\DatasetFileController;
 use App\Http\Controllers\Api\GetDatasetController;
 use App\Http\Controllers\Api\MenuStagingController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('login', [AuthController::class, 'login']);
 
 Route::group(['prefix' => 'v1'], function() {
     // dataset get data
