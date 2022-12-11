@@ -15,7 +15,11 @@ class AuthController extends BaseController
             $success['name'] =  $user->name;
             $success['email'] =  $user->email;
             $success['role'] =  $user->name;
-            $success['permissions'] =  $user->getAllPermissions();
+            $permissions = [];
+            foreach ($user->getAllPermissions() as $permission) {
+                $permissions[] = $permission->name;
+            }
+            $success['permissions'] =  $permissions;
 
             return $this->sendResponse($success, 'User login successfully.');
         }
