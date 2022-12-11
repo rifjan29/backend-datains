@@ -5838,6 +5838,94 @@ function setDataStaging($name, $jenis, $data)
                 return $result;
             }
             break;
+        case 'sddpi':
+                if('aplikasinegara_pengujian'){
+                    for ($i=1; $i < count($data); $i++) {
+                        $result = DB::connection('sdppi')->table('aplikasinegara_pengujian')->insert(
+                            [
+                            'id' => $data[$i][0],
+                            'tahun' => $data[$i][1],
+                            'negara' => $data[$i][2],
+                            'jumlah_aplikasi' => $data[$i][3],
+                            ]
+                        );
+                    }
+                }elseif('aplikasisubmit_kalibrasi'){
+                    for ($i=1; $i < count($data); $i++) {
+                        $result = DB::connection('sdppi')->table('aplikasisubmit_kalibrasi')->insert(
+                            [
+                            'id' => $data[$i][0],
+                            'tahun' => $data[$i][1],
+                            'bulan' => $data[$i][2],
+                            'jumlah_submit' => $data[$i][3],
+                            ]
+                        );
+                    }
+                }elseif('aplikasisubmit_pengujian'){
+                    for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('sdppi')->table('aplikasisubmit_pengujian')->insert(
+                        [
+                            'id' => $data[$i][0],
+                            'tahun' => $data[$i][1],
+                            'bulan' => $data[$i][2],
+                            'jumlah_submit' => $data[$i][3],
+                        ]
+                    );
+                }
+                }elseif('terbitlhu_pengujian'){
+                    for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('sdppi')->table('terbitlhu_pengujian')->insert(
+                        ['id' => $data[$i][0],
+                        'tahun' => $data[$i][1],
+                        'negara' => $data[$i][2],
+                        'jumlah' => $data[$i][3]],
+                    );
+                }
+                }elseif('terbitsertifikat_kalibrasi'){
+                    for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('sdppi')->table('terbitsertifikat_kalibrasi')->insert(
+                        ['id' => $data[$i][0],
+                        'tahun' => $data[$i][1],
+                        'bulan' => $data[$i][2],
+                        'jumlah_sertifikat' => $data[$i][3]],
+                    );
+                }
+                }elseif('terbitsertifikat_pengujian'){
+                    for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('sdppi')->table('terbitsertifikat_pengujian')->insert(
+                        ['id' => $data[$i][0],
+                        'tahun' => $data[$i][1],
+                        'bulan' => $data[$i][2],
+                        'jumlah_sertifikat' => $data[$i][3]],
+                    );
+                }
+                }elseif('terbitsp2_kalibrasi'){
+                    for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('sdppi')->table('terbitsp2_kalibrasi')->insert(
+                        ['id' => $data[$i][0],
+                        'tahun' => $data[$i][1],
+                        'jumlah_sp2' => $data[$i][2]],
+                    );
+                }
+                }elseif('terbitsp2_pengujian'){
+                    for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('sdppi')->table('terbitsp2_pengujian')->insert(
+                        ['id' => $data[$i][0],
+                        'tahun' => $data[$i][1],
+                        'jumlah_sp2' => $data[$i][2]],
+                    );
+                }
+                }elseif('totalfitur_pengujian'){
+                    for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('sdppi')->table('totalfitur_pengujian')->insert(
+                        ['id' => $data[$i][0],
+                        'tahun' => $data[$i][1],
+                        'fitur' => $data[$i][1],
+                        'jumlah_fitur' => $data[$i][2]],
+                    );
+                    }
+                }
+            break;
         default:
             # code...
             break;
