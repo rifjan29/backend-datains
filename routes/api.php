@@ -39,7 +39,7 @@ Route::group(['prefix' => 'v1'], function() {
     Route::resource('dataset',DatasetController::class);
     // dataset file
     Route::resource('file-dataset',DatasetFileController::class);
-    // import file
+    // Menu staging / datalake
     Route::get('menu-staging/{name}/{jenis}',[MenuStagingController::class,'getData']);
     Route::post('upload-data',[MenuStagingController::class,'upload']);
 

@@ -28,6 +28,11 @@ class MenuStagingController extends Controller
         }
         try {
             $result = setDataStaging($request->get('name'), $request->get('jenis'), $request->get('data'));
+            if ($result == false) {
+                return response()->json([
+                    'message' => 'Data tidak sesuai.',
+                    'data' => $result], 400);
+            }
             return response()->json([
                 'message' => 'Berhasil menambahkan data.',
                 'data' => $result], 200);

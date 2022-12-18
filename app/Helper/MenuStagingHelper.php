@@ -8,6 +8,11 @@ function setDataStaging($name, $jenis, $data)
     switch ($name) {
         case 'kominfo_ditops':
             if ($jenis == 'bts_ipfr') {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('bts_ipfr');
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('bts_ipfr')->insert(
                         ['teknologi' => $data[$i][0],
@@ -17,6 +22,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'data_ipfr') {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('data_ipfr')->insert(
                         ['pita' => $data[$i][0],
@@ -29,7 +39,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'data_labuh') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('data_labuh')->insert(
                         ['administrasi' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -38,7 +53,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'data_pnbp') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('data_pnbp')->insert(
                         ['jenis' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -47,7 +67,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'iar') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('iar')->insert(
                         ['provinsi' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -56,6 +81,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ikrap') {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
                 for ($i=1; $i < count($data); $i++) {
                    $result = DB::connection('ditops')->table('ikrap')->insert(
                     ['provinsi' => $data[$i][0],
@@ -65,7 +95,12 @@ function setDataStaging($name, $jenis, $data)
                }
                return $result;
             }elseif ($jenis == 'pengunjung_ppt') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('pengunjung_ppt')->insert(
                         ['bulan' => $data[$i][0],
                         'kategori' => $data[$i][1],
@@ -76,7 +111,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'radio_dinas_maritim_penerbangan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('radio_dinas_maritim_penerbangan')->insert(
                         ['ids' => $data[$i][0],
                         'name' => $data[$i][1],
@@ -87,7 +127,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'radio_komunikasi') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('radio_komunikasi')->insert(
                         ['ids' => $data[$i][0],
                         'name' => $data[$i][1],
@@ -97,7 +142,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'radio_station_frekuensi') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('radio_station_frekuensi')->insert(
                         ['ids' => $data[$i][0],
                         'name' => $data[$i][1],
@@ -108,7 +158,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'radio_station_jenis_penggunaan_frekuensi') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                };
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('radio_station_jenis_penggunaan_frekuensi')->insert(
                         ['ids' => $data[$i][0],
                         'name' => $data[$i][1],
@@ -118,7 +173,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'radio_station_penggunaan_frekuensi') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check==false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('data_ipfr')->insert(
                         ['name' => $data[$i][0],
                         'sub_name' => $data[$i][1],
@@ -128,7 +188,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'radio_station_pita_frekuensi') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('radio_station_pita_frekuensi')->insert(
                         ['idb' => $data[$i][0],
                         'name' => $data[$i][1],
@@ -138,7 +203,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'reor') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('reor')->insert(
                         ['kota' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -148,7 +218,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'respon_call') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('respon_call')->insert(
                         ['bulan' => $data[$i][0],
                         'kategori' => $data[$i][1],
@@ -158,7 +233,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'sertifikasi_kecakapan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('sertifikasi_kecakapan')->insert(
                         ['provinsi' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -168,7 +248,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'sertifikat_reor') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database,$data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('ditops')->table('sertifikat_reor')->insert(
                         ['jenis' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -189,6 +274,11 @@ function setDataStaging($name, $jenis, $data)
             break;
         case 'kominfo_edupak':
             if ($jenis == 'tbl_butir') {
+                $database = DB::connection('edupak')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                  for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('edupak')->table('tbl_butir')->insert(
                         ['id_butir' => $data[$i][0],
@@ -202,6 +292,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'tbl_dupak') {
+                $database = DB::connection('edupak')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                  for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('edupak')->table('tbl_dupak')->insert(
                         ['id_dupak' => $data[$i][0],
@@ -223,6 +318,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'tbl_file_spmlk') {
+                $database = DB::connection('edupak')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                  for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('edupak')->table('tbl_file_spmlk')->insert(
                         ['id_file' => $data[$i][0],
@@ -234,6 +334,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'tbl_satuan') {
+                $database = DB::connection('edupak')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                  for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('edupak')->table('tbl_satuan')->insert(
                         ['kd_satuan' => $data[$i][0],
@@ -242,6 +347,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'tbl_sub_unsur') {
+                $database = DB::connection('edupak')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                  for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('edupak')->table('tbl_sub_unsur')->insert(
                         ['id_sub_unsur' => $data[$i][0],
@@ -252,6 +362,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'tbl_unsur') {
+                $database = DB::connection('edupak')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                  for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('edupak')->table('tbl_unsur')->insert(
                         ['id_unsur' => $data[$i][0],
@@ -261,6 +376,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'tbl_user') {
+                $database = DB::connection('edupak')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                     for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('edupak')->table('tbl_user')->insert(
                         ['id_user' => $data[$i][0],
@@ -291,15 +411,25 @@ function setDataStaging($name, $jenis, $data)
             break;
         case 'kominfo_filing':
             if ($jenis == '#Tableau_11_sid_00000158_3_Connect_CheckCreateTempTableCap') {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
-                    $result = DB::connection('filing')->table('Tableau_11_sid_00000158_3_Connect_CheckCreateTempTableCap')->insert(
+                    $result = DB::connection('filing')->table('#Tableau_11_sid_00000158_3_Connect_CheckCreateTempTableCap')->insert(
                         ['COL' => $data[$i][0]],
                     );
                 }
                 return $result;
             }elseif ($jenis == 'adm_assoc') {
                 // return $data;
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('adm_assoc')->insert(
                         ['ntc_id' => $data[$i][0],
                         'adm' => $data[$i][1]],
@@ -307,7 +437,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'all_aff_ntw') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('all_aff_ntw')->insert(
                         ['aff_rec_id' => $data[$i][0],
                         'aff_ntc_id' => $data[$i][1],
@@ -325,7 +460,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'alloc_id') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('alloc_id')->insert(
                         ['ntc_year' => $data[$i][0],
                         'grp_id_last' => $data[$i][1]],
@@ -333,7 +473,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ant_type') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ant_type')->insert(
                         ['pattern_id' => $data[$i][0],
                         'f_ant_type' => $data[$i][1],
@@ -351,7 +496,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ap30b_ref_agg') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ap30b_ref_agg')->insert(
                         ['grp_id_dn' => $data[$i][0],
                         'grp_id_up' => $data[$i][1],
@@ -362,7 +512,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ap30b_ref_se') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('data_ipfr')->insert(
                         ['grp_id_a' => $data[$i][0],
                         'grp_id_i' => $data[$i][1],
@@ -375,7 +530,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ap30b_tr_res') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ap30b_tr_res')->insert(
                         ['ntc_id' => $data[$i][0],
                         'freq_band' => $data[$i][1],
@@ -392,7 +552,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'assgn') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('assgn')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -404,7 +569,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'attch') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('attch')->insert(
                         ['ntc_id' => $data[$i][0],
                         'attch_no' => $data[$i][1],
@@ -415,7 +585,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'beam_tr') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('beam_tr')->insert(
                         ['ant_diam' => $data[$i][0],
                         'pattern_id' => $data[$i][1],
@@ -429,7 +604,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'c_pfd') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('c_pfd')->insert(
                         ['ntc_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -442,7 +622,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'carrier_fr') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('carrier_fr')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_emiss' => $data[$i][1],
@@ -452,7 +637,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'cmr_grp_lnk') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('cmr_grp_lnk')->insert(
                         ['ntc_id' => $data[$i][0],
                         'seq_cmr' => $data[$i][1],
@@ -461,7 +651,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'cmr_history') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('cmr_history')->insert(
                         ['ntc_id' => $data[$i][0],
                         'itu_scraft_id' => $data[$i][1],
@@ -474,7 +669,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'cmr_notice') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('cmr_notice')->insert(
                         ['ntc_id' => $data[$i][0],
                         'itu_scraft_id' => $data[$i][1],
@@ -485,7 +685,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'cmr_syst') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('cmr_syst')->insert(
                         ['ntc_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -505,7 +710,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'com_el') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('com_el')->insert(
                         ['ntc_id' => $data[$i][0],
                         'prov' => $data[$i][1],
@@ -531,7 +741,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'coord_agree_ntw') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('coord_agree_ntw')->insert(
                         ['ntc_id' => $data[$i][0],
                         'coord_prov' => $data[$i][1],
@@ -543,7 +758,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'cost_recov') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('cost_recov')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_gpub' => $data[$i][1],
@@ -553,7 +773,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'diag_grp') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('diag_grp')->insert(
                         ['grp_id' => $data[$i][0],
                         'diag_type' => $data[$i][1],
@@ -563,7 +788,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'e_ant') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('e_ant')->insert(
                         ['ntc_id'=> $data[$i][0],
                         'emi_rcp'=> $data[$i][1],
@@ -588,7 +818,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'e_ant_elev') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('e_ant_elev')->insert(
                         ['ntc_id' => $data[$i][0],
                         'azm' => $data[$i][1],
@@ -598,7 +833,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'e_as_stn') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('data_ipfr')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -640,7 +880,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'e_srvcls') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('e_srvcls')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_e_as' => $data[$i][1],
@@ -651,7 +896,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'e_stn') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('data_ipfr')->insert(
                         ['ntc_id' => $data[$i][0],
                         'stn_name' => $data[$i][1],
@@ -680,7 +930,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'emiss') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('emiss')->insert(
                         ['grp_id'=> $data[$i][0],
                         'seq_no'=> $data[$i][1],
@@ -703,7 +958,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ex_op_grp') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ex_op_grp')->insert(
                         ['grp_id' => $data[$i][0],
                         'beamgrp_id' => $data[$i][1]],
@@ -711,7 +971,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'fdg_ref') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('fdg_ref')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -722,7 +987,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'freq') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('freq')->insert(
                         ['ntc_id' => $data[$i][0],
                         'emi_rcp' => $data[$i][1],
@@ -743,7 +1013,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'geo') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('geo')->insert(
                         ['ntc_id' => $data[$i][0],
                         'sat_name' => $data[$i][1],
@@ -761,7 +1036,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'gpub') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('gpub')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -776,7 +1056,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'grp') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('grp')->insert(
                         ['grp_id' => $data[$i][0],
                         'ntc_id' => $data[$i][1],
@@ -855,7 +1140,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'grp_aff_rec') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('grp_aff_rec')->insert(
                         ['grp_id' => $data[$i][0],
                         'aff_rec_id' => $data[$i][1]],
@@ -863,7 +1153,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'grp_lnk') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('grp_lnk')->insert(
                         ['grp_id' => $data[$i][0],
                         'lnk_grp_id' => $data[$i][1],
@@ -875,7 +1170,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'history') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('history')->insert(
                         ['ntc_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -887,7 +1187,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'hor_elev') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('hor_elev')->insert(
                         ['ntc_id' => $data[$i][0],
                         'azm' => $data[$i][1],
@@ -898,7 +1203,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'link_epm') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('link_epm')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_e_as' => $data[$i][1],
@@ -909,7 +1219,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'mask_info') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('mask_info')->insert(
                         ['ntc_id' => $data[$i][0],
                         'mask_id' => $data[$i][1],
@@ -921,7 +1236,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'mask_lnk1') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('mask_lnk1')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -933,7 +1253,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'mask_lnk2') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('data_ipfr')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -946,7 +1271,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'mod_char') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('mod_char')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_emiss' => $data[$i][1],
@@ -974,7 +1304,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ngma') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ngma')->insert(
                         ['ntc_id' => $data[$i][0],
                         'ngma_id' => $data[$i][1],
@@ -991,7 +1326,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'non_geo') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('non_geo')->insert(
                         ['ntc_id' => $data[$i][0],
                         'sat_name' => $data[$i][1],
@@ -1020,7 +1360,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'notice') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('notice')->insert(
                         ['ntc_id' => $data[$i][0],
                         'prov' => $data[$i][1],
@@ -1071,7 +1416,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ntc_commit') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ntc_commit')->insert(
                         ['ntc_id' => $data[$i][0],
                         'commit_type' => $data[$i][1]],
@@ -1079,7 +1429,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ntc_lnk') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ntc_lnk')->insert(
                         ['ntc_id' => $data[$i][0],
                         'lnk_ntc_id' => $data[$i][1],
@@ -1089,7 +1444,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ntc_lnk_ref') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ntc_lnk_ref')->insert(
                         ['plan_id' => $data[$i][0],
                         'ntc_id' => $data[$i][1],
@@ -1100,7 +1460,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ntc_memo') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ntc_memo')->insert(
                         ['ntc_id' => $data[$i][0],
                         'adm_remark' => $data[$i][1],
@@ -1109,7 +1474,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'orbit') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('orbit')->insert(
                         ['ntc_id' => $data[$i][0],
                         'orb_id' => $data[$i][1],
@@ -1144,7 +1514,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'orbit_lnk') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('orbit_lnk')->insert(
                         ['ntc_id' => $data[$i][0],
                         'emi_rcp' => $data[$i][1],
@@ -1155,7 +1530,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'ovrl_epm') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('ovrl_epm')->insert(
                         ['grp_id_up' => $data[$i][0],
                         'grp_id' => $data[$i][1],
@@ -1169,7 +1549,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'phase') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('data_ipfr')->insert(
                         ['ntc_id' => $data[$i][0],
                         'orb_id' => $data[$i][1],
@@ -1182,7 +1567,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'pl_strap') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('pl_strap')->insert(
                         ['ntc_id' => $data[$i][0],
                         'freq_dn' => $data[$i][1],
@@ -1198,7 +1588,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'plan_pub') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('plan_pub')->insert(
                         ['ntc_id' => $data[$i][0],
                         'wic_no' => $data[$i][1],
@@ -1207,7 +1602,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'provn') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('provn')->insert(
                         ['grp_id' => $data[$i][0],
                         'coord_prov' => $data[$i][1],
@@ -1221,7 +1621,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'pub_ssn') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('pub_ssn')->insert(
                         ['ntc_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -1233,7 +1638,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'pwr_ctrl') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('pwr_ctrl')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_assgn' => $data[$i][1],
@@ -1243,7 +1653,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'res49_sel') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('res49_sel')->insert(
                         ['grp_id' => $data[$i][0],
                         'sat_name' => $data[$i][1],
@@ -1268,7 +1683,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 's_as_stn') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('s_as_stn')->insert(
                         ['grp_id' => $data[$i][0],
                         'sat_name' => $data[$i][1],
@@ -1283,7 +1703,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 's_beam') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('s_beam')->insert(
                         ['ntc_id' => $data[$i][0],
                         'emi_rcp' => $data[$i][1],
@@ -1335,7 +1760,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'sat_lnk') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('sat_lnk')->insert(
                         ['ntc_id' => $data[$i][0],
                         'emi_rcp' => $data[$i][1],
@@ -1346,7 +1776,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'sat_oper') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('sat_oper')->insert(
                         ['ntc_id' => $data[$i][0],
                         'lat_fr' => $data[$i][1],
@@ -1356,7 +1791,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'sat_sys_provn') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('sat_sys_provn')->insert(
                         ['plan_id' => $data[$i][0],
                         'ntwk_pack' => $data[$i][1],
@@ -1369,7 +1809,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'scraft_cmr_freq') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('scraft_cmr_freq')->insert(
                         ['itu_scraft_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -1380,7 +1825,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'scraft_cmr_syst') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('scraft_cmr_syst')->insert(
                         ['itu_scraft_id' => $data[$i][0],
                         'ntwk_name' => $data[$i][1],
@@ -1397,7 +1847,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'sps_results') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('data_ipfr')->insert(
                         ['ntc_id' => $data[$i][0],
                         'ntwk_pack' => $data[$i][1],
@@ -1415,7 +1870,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'srs_ooak') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('srs_ooak')->insert(
                         ['grp_id' => $data[$i][0],
                         'ctry' => $data[$i][1]],
@@ -1423,7 +1883,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'srv_area') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('srv_area')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -1433,7 +1898,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'srv_cls') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('srv_cls')->insert(
                         ['grp_id' => $data[$i][0],
                         'seq_no' => $data[$i][1],
@@ -1443,7 +1913,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'strap') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('strap')->insert(
                         ['ntc_id' => $data[$i][0],
                         'strp_id' => $data[$i][1],
@@ -1458,7 +1933,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'tr_aff_ntw') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('tr_aff_ntw')->insert(
                         ['ntc_id' => $data[$i][0],
                         'coord_prov' => $data[$i][1],
@@ -1479,7 +1959,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             }elseif ($jenis == 'tr_provn') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('filing')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('filing')->table('tr_provn')->insert(
                         ['ntc_id' => $data[$i][0],
                         'coord_prov' => $data[$i][1],
@@ -1520,7 +2005,12 @@ function setDataStaging($name, $jenis, $data)
             break;
         case 'kominfo_siap':
             if ($jenis == 'ta_absen') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_absen')->insert(
                         ['nip' => $data[$i][0],
                         'tgl_masuk' => $data[$i][0],
@@ -1534,7 +2024,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_angka_kredit') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_angka_kredit')->insert(
                         ['nip' => $data[$i][0],
                         'tgl_penetapan' => $data[$i][1],
@@ -1553,7 +2048,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_bagian') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_bagian')->insert(
                         ['kode_bagian' => $data[$i][0],
                         'nama_bagian' => $data[$i][1],
@@ -1566,7 +2066,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_cabang') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_cabang')->insert(
                         ['kode_cabang'=>$data[$i][0],
                         'nama_cabang'=>$data[$i][1],
@@ -1577,7 +2082,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_eselon') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_eselon')->insert(
                         ['kode_eselon' => $data[$i][0],
                         'nama_eselon' => $data[$i][1],
@@ -1586,7 +2096,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_grade') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_grade')->insert(
                         ['kode_grade' => $data[$i][0],
                         'nilai_grade' => $data[$i][1]],
@@ -1594,7 +2109,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_hukuman_disiplin') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_hukuman_disiplin')->insert(
                         ['nip' => $data[$i][0],
                         'tgl_awal' => $data[$i][1],
@@ -1606,7 +2126,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_ijin') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_ijin')->insert(
                         ['kode_ijin' => $data[$i][0],
                         'ket_ijin' => $data[$i][1],
@@ -1626,7 +2151,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_ijin_berlapis') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_ijin_berlapis')->insert(
                         ['kode_ijin' => $data[$i][0],
                         'kode_ijin_lapisan' => $data[$i][1],
@@ -1637,7 +2167,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_ijin_hari') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_ijin_hari')->insert(
                         ['nip' =>$data[$i][0],
                         'tgl_awal' =>$data[$i][1],
@@ -1664,7 +2199,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_ijin_jam') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_ijin_jam')->insert(
                         ['nip' => $data[$i][0],
                         'tgl_ijin' => $data[$i][1],
@@ -1683,7 +2223,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_jabatan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_jabatan')->insert(
                         ['kode_jabatan' => $data[$i][0],
                         'nama_jabatan' => $data[$i][1]],
@@ -1691,7 +2236,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_karyawan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_karyawan')->insert(
                         ['nip'=> $data[$i][0],
                         'pin'=> $data[$i][1],
@@ -1725,7 +2275,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_lembur') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_lembur')->insert(
                         ['nip' => $data[$i][0],
                         'tgl_spl' => $data[$i][1],
@@ -1739,7 +2294,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_libur') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_libur')->insert(
                         ['tgl_libur' => $data[$i][0],
                         'tgl_libur' => $data[$i][1]],
@@ -1748,7 +2308,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_libur_regional') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_libur_regional')->insert(
                         ['tgl_libur' => $data[$i][0],
                         'kode_cabang' => $data[$i][1],
@@ -1758,7 +2323,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_nomenklatur') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_nomenklatur')->insert(
                         ['kode_nomenklatur' => $data[$i][0],
                         'nama_nomenklatur' => $data[$i][1],
@@ -1767,7 +2337,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_otoritas_departemen') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_otoritas_departemen')->insert(
                         ['username' => $data[$i][0],
                         'kode_departemen' => $data[$i][1]],
@@ -1775,7 +2350,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_pnbp') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_pnbp')->insert(
                         ['nip' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -1796,7 +2376,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_pola') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_pola')->insert(
                         ['kode_shift' => $data[$i][0],
                         'tgl_mulai' => $data[$i][1],
@@ -1808,7 +2393,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_pph') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_pph')->insert(
                         ['nip' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -1875,7 +2465,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_ptkp') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_ptkp')->insert(
                         ['kode_kawin' => $data[$i][0],
                         'batas_ptpkp' => $data[$i][1],
@@ -1885,7 +2480,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_range') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_range')->insert(
                         ['kode_range' => $data[$i][1],
                         'kode_absen' => $data[$i][2],
@@ -1902,7 +2502,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_range_detail') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_range_detail')->insert(
                         ['kode_range' => $data[$i][0],
                         'kode_departemen' => $data[$i][1],
@@ -1911,7 +2516,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_riwayat_karyawan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('data_ipfr')->insert(
                         ['nip' => $data[$i][0],
                         'bulan' => $data[$i][1],
@@ -1935,7 +2545,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_status_pegawai') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_status_pegawai')->insert(
                         ['kode_status' => $data[$i][0],
                         'nama_status' => $data[$i][1],
@@ -1944,7 +2559,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_subbagian') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_subbagian')->insert(
                         ['kode_subbagian' => $data[$i][1],
                         'nama_subbagian' => $data[$i][2],
@@ -1957,7 +2577,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_unit') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('siap')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('siap')->table('ta_unit')->insert(
                         ['kode_unit' => $data[$i][0],
                         'nama_unit' => $data[$i][1],
@@ -1973,7 +2598,12 @@ function setDataStaging($name, $jenis, $data)
             break;
         case 'kominfo_siemon':
             if ($jenis == 'lap_monev_perangkat_online') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('kominfo_siemon')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('kominfo_siemon')->table('lap_monev_perangkat_online')->insert(
                         ['jenis' => $data[$i][0],
                         'sertifikat' => $data[$i][1],
@@ -1984,7 +2614,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'rekap_lap_mon_perangkat_upt') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('kominfo_siemon')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('kominfo_siemon')->table('rekap_lap_mon_perangkat_upt')->insert(
                         ['upt' => $data[$i][0],
                         'pelaksanaan' => $data[$i][1],
@@ -1997,7 +2632,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'rekap_lap_montib_perangkat_upt') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('kominfo_siemon')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('kominfo_siemon')->table('rekap_lap_montib_perangkat_upt')->insert(
                         ['upt' => $data[$i][0],
                         'jumlah_pelaksanaan_monitoring' => $data[$i][1],
@@ -2020,6 +2660,11 @@ function setDataStaging($name, $jenis, $data)
             break;
         case 'kominfo_simpeg':
             if ($jenis == '#Tableau_10_sid_00000494_4_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_10_sid_00000494_4_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
@@ -2028,6 +2673,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_12_sid_00000492_2_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_12_sid_00000492_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2036,6 +2686,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_12_sid_00000492_3_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_12_sid_00000492_3_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
@@ -2044,6 +2699,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_12_sid_00000496_1_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++)  {
                     $result = DB::connection('simpeg')->table('#Tableau_12_sid_00000496_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
@@ -2052,6 +2712,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_12_sid_00000496_2_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_12_sid_00000496_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2060,6 +2725,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_12_sid_00000496_3_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_12_sid_00000496_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
@@ -2068,6 +2738,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_12_sid_00000496_4_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_12_sid_00000496_4_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
@@ -2076,6 +2751,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_0000019B_4_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_0000019B_4_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2084,6 +2764,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_000001EB_4_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_000001EB_4_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2092,6 +2777,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_000001EB_5_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_000001EB_5_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
@@ -2100,6 +2790,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00000493_6_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00000493_6_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2108,6 +2803,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00000537_4_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00000537_4_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2116,6 +2816,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00000537_5_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00000537_5_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
@@ -2124,6 +2829,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00000556_4_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00000556_4_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2132,6 +2842,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00000556_5_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00000556_5_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
@@ -2140,6 +2855,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00000556_6_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00000556_6_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
@@ -2148,6 +2868,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00000763_4_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00000763_4_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
@@ -2156,6 +2881,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00000763_5_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00000763_5_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2164,6 +2894,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00002306_4_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00002306_4_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
@@ -2172,6 +2907,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00002306_5_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00002306_5_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
@@ -2180,6 +2920,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00002306_6_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00002306_6_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
@@ -2188,6 +2933,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_13_sid_00002306_7_Group') {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_13_sid_00002306_7_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
@@ -2196,6 +2946,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_14_sid_00000168_4_Group'){
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_14_sid_00000168_4_Group')->insert(
                         ['Age (group)' => $data[$i][0],
@@ -2204,7 +2959,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_14_sid_00000175_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_14_sid_00000175_4_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2212,7 +2972,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_14_sid_0000017E_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_14_sid_0000017E_4_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2220,7 +2985,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_14_sid_00000490_5_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_14_sid_00000490_5_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2228,7 +2998,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_14_sid_00000490_6_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_14_sid_00000490_6_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2236,7 +3011,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_14_sid_00000497_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_14_sid_00000497_3_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2244,7 +3024,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_000001F0_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_000001F0_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2252,7 +3037,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_000001F0_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_000001F0_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2260,7 +3050,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000491_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000491_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2268,7 +3063,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000495_5_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000495_5_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2276,7 +3076,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000538_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000538_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2284,7 +3089,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000538_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000538_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2292,7 +3102,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000558_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000558_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2300,7 +3115,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000558_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000558_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2308,7 +3128,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000558_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000558_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2316,7 +3141,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000768_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000768_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2325,7 +3155,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000768_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000768_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2333,7 +3168,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_00000768_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_00000768_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2341,7 +3181,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_15_sid_0000230C_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_15_sid_0000230C_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2349,7 +3194,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_00000169_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_00000169_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2357,7 +3207,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_00000176_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_00000176_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2365,7 +3220,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_0000017F_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_0000017F_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2373,7 +3233,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_000001A6_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_000001A6_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2381,7 +3246,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_000001ED_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_000001ED_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2389,7 +3259,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_00000499_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_00000499_3_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2397,7 +3272,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_00000559_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_00000559_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2405,7 +3285,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_00000559_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_00000559_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2413,7 +3298,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_00000559_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_00000559_3_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2421,7 +3311,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_0000076A_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_0000076A_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2429,7 +3324,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_0000076A_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_0000076A_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2437,7 +3337,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_16_sid_0000230A_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_16_sid_0000230A_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2445,7 +3350,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000172_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000172_4_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2453,7 +3363,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_000001F3_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_000001F3_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2461,7 +3376,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_000001F3_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_000001F3_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2469,7 +3389,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_000003A5_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_000003A5_4_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2477,7 +3402,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000498_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000498_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2485,7 +3415,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000498_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000498_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2493,7 +3428,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000498_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000498_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2501,7 +3441,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000539_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000539_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2509,7 +3454,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000539_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000539_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2517,7 +3467,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000557_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000557_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2525,7 +3480,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000557_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000557_2_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2533,7 +3493,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000557_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000557_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2541,7 +3506,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000769_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000769_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2549,7 +3519,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00000769_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00000769_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2557,7 +3532,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_00002313_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_00002313_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2565,14 +3545,24 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_17_sid_0000E204_3_Connect_CheckCreateTempTableCap'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_17_sid_0000E204_3_Connect_CheckCreateTempTableCap')->insert(
                         ['COL' => $data[$i][0]],
                     );
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_18_sid_000001F1_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_18_sid_000001F1_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2580,7 +3570,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_18_sid_000001F1_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_18_sid_000001F1_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2588,7 +3583,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_18_sid_0000049B_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_18_sid_0000049B_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2596,7 +3596,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_18_sid_0000049B_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_18_sid_0000049B_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2604,7 +3609,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_18_sid_0000049B_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_18_sid_0000049B_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2612,7 +3622,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_18_sid_000053B3_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_18_sid_000053B3_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2620,7 +3635,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_18_sid_000053B3_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_18_sid_000053B3_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2628,7 +3648,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_00000173_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_00000173_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2636,7 +3661,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_000001A9_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_000001A9_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2644,7 +3674,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_000001EF_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_000001EF_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2652,7 +3687,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_000001EF_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_000001EF_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2660,7 +3700,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_000003A6_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_000003A6_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2668,7 +3713,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_0000049A_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_0000049A_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2676,7 +3726,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_0000049A_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_0000049A_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2684,7 +3739,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_0000049A_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_0000049A_4_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2692,7 +3752,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_00000540_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_00000540_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2700,7 +3765,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_0000055B_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_0000055B_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2708,7 +3778,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_00000772_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_00000772_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2716,7 +3791,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_000053B0_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_000053B0_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2724,7 +3804,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_000053B0_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_000053B0_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2732,7 +3817,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_000053B0_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_000053B0_3_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2740,7 +3830,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_19_sid_000053B0_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_19_sid_000053B0_4_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2748,7 +3843,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000001A3_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000001A3_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2756,7 +3856,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000001A3_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000001A3_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2764,7 +3869,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000001AC_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000001AC_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2772,7 +3882,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000001AC_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000001AC_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2780,7 +3895,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000001EE_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000001EE_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2788,7 +3908,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000001EE_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000001EE_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2796,7 +3921,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00000456_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00000456_4_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2804,7 +3934,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00000456_5_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00000456_5_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -2812,7 +3947,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00000456_6_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00000456_6_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2820,7 +3960,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00000456_7_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00000456_7_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2828,7 +3973,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_0000049D_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_0000049D_1_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2836,7 +3986,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_0000049D_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_0000049D_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2844,7 +3999,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_0000053B_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_0000053B_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2852,7 +4012,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_0000053B_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_0000053B_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2860,7 +4025,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00000563_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00000563_1_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2868,7 +4038,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00000563_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00000563_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2876,7 +4051,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00000775_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00000775_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2884,7 +4064,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00000775_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00000775_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2892,7 +4077,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_00002309_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_00002309_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2900,7 +4090,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000053AF_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000053AF_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2908,7 +4103,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000053AF_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000053AF_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2916,7 +4116,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_20_sid_000053AF_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_20_sid_000053AF_3_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2924,7 +4129,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_00000097_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_00000097_4_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -2932,7 +4142,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_000001A1_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_000001A1_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2940,7 +4155,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_000001A1_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_000001A1_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2948,7 +4168,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_000001A1_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_000001A1_3_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -2956,7 +4181,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_000001A8_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_000001A8_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2964,7 +4194,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_000001EC_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_000001EC_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2972,7 +4207,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_000001EC_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_000001EC_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2980,7 +4220,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_0000049E_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_0000049E_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -2988,7 +4233,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_0000049E_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_0000049E_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -2996,7 +4246,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_00000565_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_00000565_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3004,7 +4259,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_00000565_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_00000565_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3012,7 +4272,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_00002314_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_00002314_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3020,7 +4285,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_00002314_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_00002314_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3028,7 +4298,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_000053B2_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_000053B2_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3036,7 +4311,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_21_sid_000053B2_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_21_sid_000053B2_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3044,7 +4324,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_00000098_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_00000098_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -3052,7 +4337,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000019F_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000019F_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3060,7 +4350,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000019F_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000019F_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3068,7 +4363,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_000001F2_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_000001F2_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3076,7 +4376,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000045A_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000045A_1_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3084,7 +4389,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000045A_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000045A_2_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3092,7 +4402,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000045A_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000045A_3_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3100,7 +4415,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000045A_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000045A_4_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3108,7 +4428,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000049C_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000049C_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3116,7 +4441,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_00000543_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_00000543_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3124,7 +4454,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_00000543_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_00000543_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3132,7 +4467,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_00000562_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_00000562_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3140,7 +4480,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_00000562_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_00000562_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3148,7 +4493,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_00000562_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_00000562_3_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3156,7 +4506,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000076E_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000076E_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3164,7 +4519,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000076E_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000076E_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3172,7 +4532,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000230F_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000230F_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3180,7 +4545,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_0000230F_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_0000230F_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3188,7 +4558,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_000053AE_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_000053AE_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3196,7 +4571,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_000053AE_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_000053AE_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3204,7 +4584,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_22_sid_000053AE_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_22_sid_000053AE_3_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3212,7 +4597,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_00000099_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_00000099_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -3220,7 +4610,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_000001A4_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_000001A4_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3228,7 +4623,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_000001A4_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_000001A4_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3236,7 +4636,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_000001A4_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_000001A4_3_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3244,7 +4649,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_000001AE_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_000001AE_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3252,7 +4662,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_000001AE_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_000001AE_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3260,7 +4675,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000049F_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000049F_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3268,7 +4688,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000049F_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000049F_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3276,7 +4701,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000049F_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000049F_3_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3284,7 +4714,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000049F_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000049F_4_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3292,7 +4727,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000053C_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000053C_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3300,7 +4740,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000053C_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000053C_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3308,7 +4753,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000055F_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000055F_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3316,7 +4766,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000055F_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000055F_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3324,7 +4779,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_0000055F_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_0000055F_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3332,7 +4792,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_23_sid_00002308_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_23_sid_00002308_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3340,7 +4805,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000001A0_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000001A0_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3348,7 +4818,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000001A0_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000001A0_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3356,7 +4831,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000001A0_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000001A0_3_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3364,7 +4844,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000001A0_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000001A0_4_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3372,7 +4857,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000001AD_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000001AD_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3380,7 +4870,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000001F9_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000001F9_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3388,7 +4883,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000001F9_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000001F9_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3396,7 +4896,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000004A1_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000004A1_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3404,7 +4909,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000004A1_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000004A1_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3412,7 +4922,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000004A1_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000004A1_3_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3420,7 +4935,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000004A1_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000004A1_4_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3428,7 +4948,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_0000053E_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_0000053E_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3436,7 +4961,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_0000055E_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_0000055E_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3444,7 +4974,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_0000055E_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_0000055E_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3452,7 +4987,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_0000076C_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_0000076C_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3460,7 +5000,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000053B1_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000053B1_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'Nama (Ta Unit) (group)' => $data[$i][1]],
@@ -3468,7 +5013,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_24_sid_000053B1_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_24_sid_000053B1_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3476,7 +5026,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_0000009A_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_0000009A_4_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -3484,7 +5039,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_000001A2_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_000001A2_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3492,7 +5052,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_000001A2_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_000001A2_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3500,7 +5065,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_000001FA_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_000001FA_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3508,7 +5078,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_000001FA_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_000001FA_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3516,7 +5091,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_000004A0_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_000004A0_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3524,7 +5104,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_0000053D_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_0000053D_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3532,7 +5117,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_0000053D_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_0000053D_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3540,7 +5130,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_00000564_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_00000564_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3548,7 +5143,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_00000774_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_00000774_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3556,7 +5156,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_25_sid_00000774_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_25_sid_00000774_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3564,7 +5169,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_26_sid_0000009B_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_26_sid_0000009B_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -3572,7 +5182,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_26_sid_000001F4_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_26_sid_000001F4_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3580,7 +5195,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_26_sid_00000545_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_26_sid_00000545_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3588,7 +5208,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_26_sid_00000545_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_26_sid_00000545_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3596,7 +5221,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_26_sid_0000055A_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_26_sid_0000055A_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3604,7 +5234,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_26_sid_00000773_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_26_sid_00000773_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3612,7 +5247,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_26_sid_00002307_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_26_sid_00002307_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3620,7 +5260,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_26_sid_00002307_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_26_sid_00002307_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3628,7 +5273,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_27_sid_0000009C_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_27_sid_0000009C_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -3636,7 +5286,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_27_sid_000001F5_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_27_sid_000001F5_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3644,7 +5299,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_27_sid_00000542_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_27_sid_00000542_1_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3652,7 +5312,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_27_sid_00000542_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_27_sid_00000542_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3660,7 +5325,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_27_sid_00000561_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_27_sid_00000561_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3668,7 +5338,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_27_sid_00000561_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_27_sid_00000561_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3676,7 +5351,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_27_sid_0000076B_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_27_sid_0000076B_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3684,7 +5364,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_28_sid_0000009D_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_28_sid_0000009D_1_Group')->insert(
                         ['Age (group)' => $data[$i][0],
                         'Calculation_1155736310091309056' => $data[$i][1]],
@@ -3692,7 +5377,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_28_sid_000001F8_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_28_sid_000001F8_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3700,7 +5390,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_28_sid_000001F8_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_28_sid_000001F8_2_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3708,7 +5403,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_28_sid_0000053A_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_28_sid_0000053A_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3716,7 +5416,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_28_sid_00000560_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_28_sid_00000560_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3724,7 +5429,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_28_sid_00000776_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_28_sid_00000776_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3732,7 +5442,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_28_sid_0000230D_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_28_sid_0000230D_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3740,7 +5455,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_29_sid_000001F6_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_29_sid_000001F6_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3748,7 +5468,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_29_sid_00000544_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_29_sid_00000544_1_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3756,7 +5481,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_29_sid_00000544_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_29_sid_00000544_2_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3764,7 +5494,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_29_sid_00000544_3_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_29_sid_00000544_3_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3772,7 +5507,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_29_sid_0000055D_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_29_sid_0000055D_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3780,7 +5520,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_29_sid_0000076F_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_29_sid_0000076F_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3788,7 +5533,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_30_sid_00000541_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_30_sid_00000541_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3796,7 +5546,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_30_sid_00000541_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_30_sid_00000541_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3804,7 +5559,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_30_sid_0000055C_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_30_sid_0000055C_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3812,7 +5572,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_30_sid_00000770_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_30_sid_00000770_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3820,7 +5585,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_30_sid_00000770_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_30_sid_00000770_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3828,7 +5598,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_31_sid_0000053F_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_31_sid_0000053F_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3836,7 +5611,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_31_sid_0000053F_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_31_sid_0000053F_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3844,7 +5624,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_37_sid_00000203_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_37_sid_00000203_4_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3852,7 +5637,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_37_sid_00000203_5_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_37_sid_00000203_5_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3860,7 +5650,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_38_sid_00000204_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_38_sid_00000204_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3868,7 +5663,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_38_sid_00000204_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_38_sid_00000204_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3876,7 +5676,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_39_sid_00000206_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_39_sid_00000206_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3884,7 +5689,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_39_sid_00000206_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_39_sid_00000206_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3892,7 +5702,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_40_sid_00000205_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_40_sid_00000205_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3900,7 +5715,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_40_sid_00000205_2_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_40_sid_00000205_2_Group')->insert(
                         ['Nama (Ta Pendidikan) (group)' => $data[$i][0],
                         'nama (ta_pendidikan)' => $data[$i][1]],
@@ -3908,7 +5728,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_41_sid_00000207_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_41_sid_00000207_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3916,7 +5741,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_42_sid_00000208_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_42_sid_00000208_1_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3924,14 +5754,24 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_5_sid_0000005B_3_Connect_CheckCreateTempTableCap'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_5_sid_0000005B_3_Connect_CheckCreateTempTableCap')->insert(
                         ['COL' => $data[$i][0]],
                     );
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_6_sid_00000192_4_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_6_sid_00000192_4_Group')->insert(
                         ['unit kerja (group)' => $data[$i][0],
                         'Calculation_3517592839354318850' => $data[$i][1]],
@@ -3939,7 +5779,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_8_sid_00000193_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('data_ipfr')->insert(
                         ['unit kerja (group)' => $data[$i][0],
                         'Calculation_3517592839354318850' => $data[$i][1]],
@@ -3947,7 +5792,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_8_sid_00000441_10_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_8_sid_00000441_10_Group')->insert(
                         ['Umur (group)' => $data[$i][0],
                         'Calculation_1256504300034912269' => $data[$i][1]],
@@ -3955,7 +5805,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_8_sid_00000441_8_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_8_sid_00000441_8_Group')->insert(
                         ['if null nama unit (group)' => $data[$i][0],
                         'Calculation_1256504300020723723' => $data[$i][1]],
@@ -3963,7 +5818,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == '#Tableau_8_sid_00000441_9_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('#Tableau_8_sid_00000441_9_Group')->insert(
                         ['Nama (Ta Unit) (group)' => $data[$i][0],
                         'nama (ta_unit)' => $data[$i][1]],
@@ -3971,7 +5831,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'riwayat_pendidikan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('riwayat_pendidikan')->insert(
                         ['nip' => $data[$i][0],
                         'tahun_lulus' => $data[$i][1],
@@ -3991,7 +5856,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 't_pns'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('t_pns')->insert(
                         ['nip' => $data[$i][0],
                         'nomor_sk_pns' => $data[$i][1],
@@ -4003,7 +5873,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_angka_kredit'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_angka_kredit')->insert(
                         ['nip' => $data[$i][0],
                         'tgl_penetapan' => $data[$i][1],
@@ -4022,7 +5897,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_bagian'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_bagian')->insert(
                         ['kode_bagian' => $data[$i][0],
                         'nama_bagian' => $data[$i][1],
@@ -4032,7 +5912,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_bahasa'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_bahasa')->insert(
                         ['nip' => $data[$i][0],
                         'nama_bahasa' => $data[$i][1],
@@ -4044,7 +5929,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_cabang'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_cabang')->insert(
                         ['kode_cabang' => $data[$i][0],
                         'nama_cabang' => $data[$i][1],
@@ -4059,7 +5949,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_cpns'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_cpns')->insert(
                         ['nip' => $data[$i][0],
                         'nomor_nota_pers_bkn' => $data[$i][1],
@@ -4074,7 +5969,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_departemen'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_departemen')->insert(
                         ['kode_departemen' => $data[$i][0],
                         'nama_departemen' => $data[$i][1],
@@ -4083,7 +5983,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_diklat_eselon'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_diklat_eselon')->insert(
                         ['kode_eselon' => $data[$i][0],
                         'tunjangan_eselon' => $data[$i][1],
@@ -4092,7 +5997,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_diklat_fungsional'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_diklat_fungsional')->insert(
                         ['kode_diklat_fungsional' => $data[$i][0],
                         'nama_diklat_fungsional' => $data[$i][1]],
@@ -4100,7 +6010,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_diklat_struktural'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_diklat_struktural')->insert(
                         ['kode_diklat_struktural' => $data[$i][0],
                         'nama_diklat_struktural' => $data[$i][1]],
@@ -4108,7 +6023,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_diklat_teknis'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_diklat_teknis')->insert(
                         ['kode_diklat_teknis' => $data[$i][0],
                         'nama_diklat_teknis' => $data[$i][1]],
@@ -4116,7 +6036,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_golongan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_golongan')->insert(
                         ['kode_golongan' => $data[$i][0],
                         'nama_golongan' => $data[$i][1],
@@ -4127,7 +6052,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_jabatan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_jabatan')->insert(
                         ['kode_jabatan' => $data[$i][0],
                         'nama_jabatan' => $data[$i][1],
@@ -4136,7 +6066,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_jasa'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_jasa')->insert(
                         ['id_jasa' => $data[$i][0],
                         'nip' => $data[$i][1],
@@ -4151,7 +6086,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_jenis_jabatan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_jenis_jabatan')->insert(
                         ['kode_jenis_jabatan' => $data[$i][0],
                         'nama_jenis_jabatan' => $data[$i][1]],
@@ -4159,7 +6099,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_jenis_jasa'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_jenis_jasa')->insert(
                         ['kode_jenis_jasa' => $data[$i][0],
                         'nama_tanda_jasa' => $data[$i][1],
@@ -4171,7 +6116,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_jenis_kenaikan_pangkat'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_jenis_kenaikan_pangkat')->insert(
                         ['kode_jenis_kenaikan_pangkat' => $data[$i][0],
                         'nama_jenis_kenaikan' => $data[$i][1]],
@@ -4179,7 +6129,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_jurusan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_jurusan')->insert(
                         ['kode_jurusan' => $data[$i][0],
                         'nama' => $data[$i][1]],
@@ -4187,7 +6142,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_karyawan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_karyawan')->insert(
                         ['nip'=>$data[$i][0],
                         'kode_departemen'=>$data[$i][1],
@@ -4273,7 +6233,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_kedudukan_pegawai'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_kedudukan_pegawai')->insert(
                         ['kode_kedudukan_pegawai' => $data[$i][0],
                         'nama' => $data[$i][1]],
@@ -4281,7 +6246,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_pendidikan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_pendidikan')->insert(
                         ['kode_pendidikan' => $data[$i][0],
                         'nama' => $data[$i][1]],
@@ -4289,7 +6259,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_penilaian'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_penilaian')->insert(
                         ['nip'=>$data[$i][0],
                         'tgl_nilai'=>$data[$i][1],
@@ -4309,7 +6284,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_riwayat_diklat_fungsional'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_riwayat_diklat_fungsional')->insert(
                         ['nip' =>$data[$i][0],
                         'tgl_mulai' =>$data[$i][1],
@@ -4329,7 +6309,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_riwayat_diklat_struktural'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_riwayat_diklat_struktural')->insert(
                         ['nip' => $data[$i][0],
                         'tgl_mulai' => $data[$i][1],
@@ -4349,7 +6334,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_riwayat_diklat_teknis'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_riwayat_diklat_teknis')->insert(
                         ['nip' => $data[$i][0],
                         'tgl_mulai' => $data[$i][1],
@@ -4369,7 +6359,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_riwayat_seminar'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_riwayat_seminar')->insert(
                         ['nip' =>$data[$i][0],
                         'tgl_mulai' =>$data[$i][1],
@@ -4389,7 +6384,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_sklain'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_sklain')->insert(
                         ['id_sklain' => $data[$i][0],
                         'nip' => $data[$i][1],
@@ -4403,7 +6403,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_skp'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_skp')->insert(
                         ['nip' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -4423,7 +6428,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_status_pegawai'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_status_pegawai')->insert(
                         ['kode_status' => $data[$i][0],
                         'nama_status' => $data[$i][1],
@@ -4432,7 +6442,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_stlud'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_stlud')->insert(
                         ['kode_status' => $data[$i][0],
                         'keterangan' => $data[$i][1]],
@@ -4440,7 +6455,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_subbagian'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_subbagian')->insert(
                         ['kode_status' => $data[$i][0],
                         'nama_subbagian' => $data[$i][1],
@@ -4450,7 +6470,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_tgs_luar_negri'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_tgs_luar_negri')->insert(
                         ['id_tugas' => $data[$i][0],
                         'nip' => $data[$i][1],
@@ -4471,7 +6496,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_tim_kerja'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('ta_tim_kerja')->insert(
                         ['kode' => $data[$i][0],
                         'nama' => $data[$i][1]],
@@ -4479,7 +6509,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'ta_unit'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('simpeg')->table('data_ipfr')->insert(
                         ['kode' => $data[$i][0],
                         'nama' => $data[$i][1],
@@ -4492,6 +6527,11 @@ function setDataStaging($name, $jenis, $data)
             break;
         case 'kominfo_staging':
             if ( $jenis == '#Tableau_48_sid_00007B36_4_Group'){
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('#Tableau_48_sid_00007B36_4_Group')->insert(
                         ['Location2 (group)' => $data[$i][0],
@@ -4500,7 +6540,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == '#Tableau_69_sid_00007B3E_1_Group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('#Tableau_69_sid_00007B3E_1_Group')->insert(
                         ['Location2 (group)' => $data[$i][0],
                         'location' => $data[$i][1]],
@@ -4508,7 +6553,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'data_mon_hf'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('data_mon_hf')->insert(
                         ['stasiun_monitoring' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -4517,7 +6567,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'data_sertifikasi'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('data_sertifikasi')->insert(
                         ['id' => $data[$i][0],
                         'plg_id' => $data[$i][1],
@@ -4548,7 +6603,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_angkatan_kerja_jenis_kelamin'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_angkatan_kerja_jenis_kelamin')->insert(
                         ['id'=> $data[$i][0],
                         'btl'=> $data[$i][1],
@@ -4563,7 +6623,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_angkatan_kerja_pendidikan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_angkatan_kerja_pendidikan')->insert(
                         ['id'=> $data[$i][0],
                         'jumlah'=> $data[$i][1],
@@ -4575,7 +6640,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_angkatan_kerja_umur'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_angkatan_kerja_umur')->insert(
                         ['id' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -4587,7 +6657,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_angkatan_kerja_wilayah'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_angkatan_kerja_wilayah')->insert(
                         ['id' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -4599,7 +6674,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_kelamin'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_kelamin')->insert(
                         ['id'=>$data[$i][0],
                         'btl'=>$data[$i][1],
@@ -4614,7 +6694,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_migran'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_migran')->insert(
                         ['id'=>$data[$i][0],
                         'kp_laki'=>$data[$i][1],
@@ -4641,7 +6726,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_migran_asal'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_migran_asal')->insert(
                         ['id' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -4653,7 +6743,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_migran_asal_tujuan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_migran_asal_tujuan')->insert(
                         ['id' => $data[$i][0],
                         'jumlah_kk' => $data[$i][1],
@@ -4664,7 +6759,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_migran_tujuan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_migran_tujuan')->insert(
                         ['id' => $data[$i][0],
                         'jumlah_kk' => $data[$i][1],
@@ -4675,7 +6775,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_pendidikan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_pendidikan')->insert(
                         ['id' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -4687,7 +6792,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_pengangguran_jenis_kelamin'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_pengangguran_jenis_kelamin')->insert(
                         ['id' => $data[$i][0],
                         'btl' => $data[$i][1],
@@ -4702,7 +6812,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_pengangguran_pendidikan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_pengangguran_pendidikan')->insert(
                         ['id' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -4714,7 +6829,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_pengangguran_umur'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_pengangguran_umur')->insert(
                         ['id' =>$data[$i][0],
                         'jumlah' =>$data[$i][1],
@@ -4726,7 +6846,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_pengangguran_wilayah'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_pengangguran_wilayah')->insert(
                         ['id' =>$data[$i][0],
                         'jumlah' =>$data[$i][1],
@@ -4738,7 +6863,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_umur'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_umur')->insert(
                         ['id' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -4750,7 +6880,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'disnaker_wilayah'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('disnaker_wilayah')->insert(
                         ['id' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -4762,7 +6897,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'elapor_kabupaten'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('elapor_kabupaten')->insert(
                         ['id' => $data[$i][0],
                         'nama' => $data[$i][1],
@@ -4775,7 +6915,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'elapor_kategori'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('elapor_kategori')->insert(
                         ['id'=> $data[$i][0],
                         'nama'=> $data[$i][1],
@@ -4788,7 +6933,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'elapor_koordinat'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('elapor_koordinat')->insert(
                         ['id' =>$data[$i][0],
                         'idk' =>$data[$i][1],
@@ -4804,7 +6954,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'elapor_listskpd'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('elapor_listskpd')->insert(
                         ['id'=> $data[$i][0],
                         'nama'=> $data[$i][1],
@@ -4817,7 +6972,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'event_penting'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('event_penting')->insert(
                         ['id' => $data[$i][0],
                         'pita_frekuensi' => $data[$i][1],
@@ -4834,7 +6994,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'frekuensi_terbanyak'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('frekuensi_terbanyak')->insert(
                         ['dinas' => $data[$i][0],
                         'total' => $data[$i][1],
@@ -4843,7 +7008,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'hasil_monitor'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('hasil_monitor')->insert(
                         ['dinas' => $data[$i][0],
                         'sub_service' => $data[$i][1],
@@ -4856,7 +7026,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'hs_telekomunikasi'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('hs_telekomunikasi')->insert(
                         ['tahun' => $data[$i][0],
                         'kode_hs' => $data[$i][1],
@@ -4866,7 +7041,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'koperasi_jenis'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('koperasi_jenis')->insert(
                         ['id' => $data[$i][0],
                         'koperasi' => $data[$i][1],
@@ -4900,7 +7080,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'koperasi_kelompok'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('koperasi_kelompok')->insert(
                         ['id' => $data[$i][0],
                         'koperasi' => $data[$i][1],
@@ -4934,7 +7119,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'koperasi_publik'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('koperasi_publik')->insert(
                         ['id' => $data[$i][0],
                         'koperasi' => $data[$i][1],
@@ -4963,7 +7153,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'mon_hf'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('mon_hf')->insert(
                         ['administrasi' => $data[$i][0],
                         'kode' => $data[$i][1],
@@ -4973,7 +7168,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'pdb'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('pdb')->insert(
                         ['tahun' => $data[$i][0],
                         'pdb_lapangan' => $data[$i][1],
@@ -4991,7 +7191,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'penggunaan_frekuensi'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('penggunaan_frekuensi')->insert(
                         ['id' => $data[$i][0],
                         'client' => $data[$i][1],
@@ -5010,7 +7215,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'penggunaan_frekuensi_2'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('penggunaan_frekuensi_2')->insert(
                         ['id' => $data[$i][0],
                         'penggunaan' => $data[$i][1],
@@ -5031,7 +7241,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'peraturan_sdppi'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('peraturan_sdppi')->insert(
                         ['nama_peraturan' => $data[$i][0],
                         'Peraturan' => $data[$i][1],
@@ -5042,7 +7257,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'periode_tahunan_bwa'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('periode_tahunan_bwa')->insert(
                         ['pita' => $data[$i][0],
                         'operator' => $data[$i][1],
@@ -5052,7 +7272,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'perjanjian_sdppi'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('perjanjian_sdppi')->insert(
                         ['nama_perjanjian' => $data[$i][0],
                         'perjanjian' => $data[$i][1],
@@ -5063,7 +7288,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'pertumbuhan_pdb'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('pertumbuhan_pdb')->insert(
                         ['tahun' => $data[$i][0],
                         'pdb_lapangan' => $data[$i][1],
@@ -5086,7 +7316,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'pita_frekuensi_by_tahun'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('pita_frekuensi_by_tahun')->insert(
                         ['pita' => $data[$i][0],
                         'termonitor' => $data[$i][1],
@@ -5098,7 +7333,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'refarming'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('refarming')->insert(
                         ['judul' => $data[$i][0],
                         'rentang_pita_sebelum' => $data[$i][1],
@@ -5109,7 +7349,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'rekap_frekuensi_by_tahun'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('rekap_frekuensi_by_tahun')->insert(
                         ['upt' => $data[$i][0],
                         'termonitor' => $data[$i][1],
@@ -5121,7 +7366,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ringkasan_apbn'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ringkasan_apbn')->insert(
                         ['judul' => $data[$i][0],
                         'apbn_2020' => $data[$i][1],
@@ -5133,7 +7383,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sianti'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sianti')->insert(
                         ['nama' => $data[$i][0],
                         'total' => $data[$i][1],
@@ -5143,7 +7398,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_cctv'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_cctv')->insert(
                         ['id' => $data[$i][0],
                         'idc' => $data[$i][1],
@@ -5155,7 +7415,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_publik'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_publik')->insert(
                         ['id' => $data[$i][0],
                         'idp' => $data[$i][1],
@@ -5188,7 +7453,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5197,7 +7467,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance_bantul'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance_bantul')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5206,7 +7481,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance_kominfosleman'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance_kominfosleman')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5215,7 +7495,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance_kota'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance_kota')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5224,7 +7509,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance_kp'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance_kp')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5233,7 +7523,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance_malioboro'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance_malioboro')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5242,7 +7537,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance_sleman'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance_sleman')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5251,7 +7551,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance_sungai'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance_sungai')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5260,7 +7565,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'sibakul_survilance_uptmalioboro'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('sibakul_survilance_uptmalioboro')->insert(
                         ['id' => $data[$i][0],
                         'type' => $data[$i][1],
@@ -5269,7 +7579,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'smfr'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('smfr')->insert(
                         ['index' => $data[$i][0],
                         'unit_id' => $data[$i][1],
@@ -5291,7 +7606,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'stasiun_hf'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('stasiun_hf')->insert(
                         ['site_name' => $data[$i][0],
                         'city' => $data[$i][1],
@@ -5301,7 +7621,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'tibnas_dan_rol'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('tibnas_dan_rol')->insert(
                         ['upt' => $data[$i][0],
                         'provinsi' => $data[$i][1],
@@ -5317,7 +7642,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_disabilitas'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_disabilitas')->insert(
                         ['id' => $data[$i][0],
                         'disabilitas' => $data[$i][1],
@@ -5335,7 +7665,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_jenis_kelamin'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_jenis_kelamin')->insert(
                         ['id' => $data[$i][0],
                         'jenis_kelamin' => $data[$i][1],
@@ -5353,7 +7688,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_kabupaten'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_kabupaten')->insert(
                         ['id' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -5362,7 +7702,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_kelas'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_kelas')->insert(
                         ['id' => $data[$i][0],
                         'kelas' => $data[$i][1],
@@ -5380,7 +7725,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_klasifikasi'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_klasifikasi')->insert(
                         ['id' =>$data[$i][0],
                         'klasifikasi_usaha' =>$data[$i][1],
@@ -5398,7 +7748,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_laporan_dua'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_laporan_dua')->insert(
                         ['id' => $data[$i][0],
                         'diy' => $data[$i][1],
@@ -5412,7 +7767,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_laporan_empat'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_laporan_empat')->insert(
                         ['id' => $data[$i][0],
                         'harga_rata' => $data[$i][1],
@@ -5422,7 +7782,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_laporan_enam'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_laporan_enam')->insert(
                         ['id' => $data[$i][0],
                         'jml_trans' => $data[$i][1],
@@ -5435,7 +7800,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_laporan_lima'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_laporan_lima')->insert(
                         ['id' => $data[$i][0],
                         'harga_rata' => $data[$i][1],
@@ -5446,7 +7816,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_laporan_satu'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_laporan_satu')->insert(
                         ['id' => $data[$i][0],
                         'jenis_pembinaan' => $data[$i][1],
@@ -5457,7 +7832,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_laporan_tiga'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_laporan_tiga')->insert(
                         ['id' => $data[$i][0],
                         'diy' => $data[$i][1],
@@ -5471,7 +7851,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_pendidikan'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_pendidikan')->insert(
                         ['id' => $data[$i][0],
                         'pendidikan' => $data[$i][1],
@@ -5489,7 +7874,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_sektor_ekraf'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_sektor_ekraf')->insert(
                         ['id' => $data[$i][0],
                         'sektor_ekraf' => $data[$i][1],
@@ -5507,7 +7897,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ( $jenis == 'ukm_sektor_group'){
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging')->table('ukm_sektor_group')->insert(
                         ['id' => $data[$i][0],
                         'sektor_pergub' => $data[$i][1],
@@ -5528,6 +7923,11 @@ function setDataStaging($name, $jenis, $data)
             break;
         case 'staging2':
             if ($jenis == 'alat_perangkat') {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('alat_perangkat')->insert(
                         ['perangkat' => $data[$i][0],
@@ -5538,6 +7938,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'balai_uji_tetap') {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('balai_uji_tetap')->insert(
                         ['nama' => $data[$i][0],
@@ -5548,6 +7953,11 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'cakupan_smfr') {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
                 for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('cakupan_smfr')->insert(
                         ['id' => $data[$i][0],
@@ -5557,7 +7967,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'capaian_spektrum') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('capaian_spektrum')->insert(
                         ['tahun' => $data[$i][0],
                         'capaian' => $data[$i][1],
@@ -5566,7 +7981,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'data_imei') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('data_imei')->insert(
                         ['id' => $data[$i][0],
                         'data_imei' => $data[$i][1],
@@ -5575,7 +7995,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'data_labuh') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('data_labuh')->insert(
                         ['administrasi' => $data[$i][0],
                         'tahun' => $data[$i][1],
@@ -5584,7 +8009,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'data_lokai_penempatan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('data_lokai_penempatan')->insert(
                         ['cluster' => $data[$i][0],
                         'jumlah_venue' => $data[$i][1],
@@ -5597,7 +8027,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'dmp_sfr') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('dmp_sfr')->insert(
                         ['equipment' => $data[$i][0],
                         'penyelenggara' => $data[$i][1],
@@ -5608,7 +8043,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'hasil_mon_sfr') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('hasil_mon_sfr')->insert(
                         ['jenis' => $data[$i][0],
                         'sfr' => $data[$i][1],
@@ -5618,7 +8058,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'hs_telekomunikasi_new') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('hs_telekomunikasi_new')->insert(
                         ['id' => $data[$i][0],
                         'hs_code' => $data[$i][1],
@@ -5637,7 +8082,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'isr_smntara') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('isr_smntara')->insert(
                         ['id' => $data[$i][0],
                         'equipment' => $data[$i][1],
@@ -5647,7 +8097,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'jumlah_alat_ukur') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('jumlah_alat_ukur')->insert(
                         ['perangkat' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -5657,7 +8112,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'jumlah_sdppi') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('jumlah_sdppi')->insert(
                         ['unit' => $data[$i][0],
                         'jumlah' => $data[$i][1],
@@ -5667,7 +8127,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'jlhu_tiap_balai') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('jlhu_tiap_balai')->insert(
                         ['id' => $data[$i][0],
                         'balai' => $data[$i][1],
@@ -5676,7 +8141,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'jmon_sfr_perpanas') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('jmon_sfr_perpanas')->insert(
                         ['alat' => $data[$i][0],
                         'sfr' => $data[$i][1],
@@ -5686,7 +8156,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'nilai_bhr') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('nilai_bhr')->insert(
                         ['pita_frekuensi' => $data[$i][0],
                         'total' => $data[$i][1],
@@ -5695,7 +8170,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'opening_perangkat') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('opening_perangkat')->insert(
                         ['no' => $data[$i][0],
                         'perarngkat' => $data[$i][1],
@@ -5705,7 +8185,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'pengakuan_laboraturium') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('pengakuan_laboraturium')->insert(
                         ['dasar_hukum' => $data[$i][0],
                         'kelompok' => $data[$i][1],
@@ -5715,7 +8200,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'penyeselaian_pegujian') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('penyeselaian_pegujian')->insert(
                         ['tahun' => $data[$i][0],
                         'jumlah1' => $data[$i][1],
@@ -5726,7 +8216,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'perangkat_digunakan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('perangkat_digunakan')->insert(
                         ['cluster' => $data[$i][0],
                         'jumlah_ver' => $data[$i][1],
@@ -5736,7 +8231,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'perangkat_pertandingan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('perangkat_pertandingan')->insert(
                         ['cluster' => $data[$i][0],
                         'jumlah_venue' => $data[$i][1],
@@ -5746,7 +8246,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'perangkat_wsbk&perpanas') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('perangkat_wsbk&perpanas')->insert(
                         ['id' => $data[$i][0],
                         'perangkat' => $data[$i][1],
@@ -5757,7 +8262,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'perkembangan_pnbp') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('perkembangan_pnbp')->insert(
                         ['id' => $data[$i][0],
                         'kementrian_kelembagaan' => $data[$i][1],
@@ -5770,7 +8280,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'personil_perangkat_open') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('personil_perangkat_open')->insert(
                         ['id' => $data[$i][0],
                         'lokasi' => $data[$i][1],
@@ -5780,7 +8295,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'rekap_system_smfr') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('rekap_system_smfr')->insert(
                         ['id' => $data[$i][0],
                         'upt' => $data[$i][1],
@@ -5790,7 +8310,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'sebaran_penggunaan') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('sebaran_penggunaan')->insert(
                         ['kabupaten' => $data[$i][0],
                         'sfr' => $data[$i][1],
@@ -5800,14 +8325,24 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'sebaran_penggunaan_smfr') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('sebaran_penggunaan_smfr')->insert(
                         ['COL 1' => $data[$i][0]],
                     );
                 }
                 return $result;
             } elseif ($jenis == 'sfr_broadcast') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('sfr_broadcast')->insert(
                         ['lokasi' => $data[$i][0],
                         'sfr' => $data[$i][1],
@@ -5816,7 +8351,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'target_penambahan_spektrum') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('target_penambahan_spektrum')->insert(
                         ['judul' => $data[$i][0],
                         '2020' => $data[$i][1],
@@ -5828,7 +8368,12 @@ function setDataStaging($name, $jenis, $data)
                 }
                 return $result;
             } elseif ($jenis == 'upt_personil_wsbk_perpanas') {
-                 for ($i=1; $i < count($data); $i++) {
+                $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('staging_dua')->table('upt_personil_wsbk_perpanas')->insert(
                         ['id' => $data[$i][0],
                         'unit' => $data[$i][1],
@@ -5839,7 +8384,12 @@ function setDataStaging($name, $jenis, $data)
             }
             break;
         case 'sddpi':
-                if('aplikasinegara_pengujian'){
+                if($jenis = 'aplikasinegara_pengujian'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                         $result = DB::connection('sdppi')->table('aplikasinegara_pengujian')->insert(
                             [
@@ -5850,7 +8400,12 @@ function setDataStaging($name, $jenis, $data)
                             ]
                         );
                     }
-                }elseif('aplikasisubmit_kalibrasi'){
+                }elseif($jenis == 'aplikasisubmit_kalibrasi'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                         $result = DB::connection('sdppi')->table('aplikasisubmit_kalibrasi')->insert(
                             [
@@ -5861,7 +8416,12 @@ function setDataStaging($name, $jenis, $data)
                             ]
                         );
                     }
-                }elseif('aplikasisubmit_pengujian'){
+                }elseif($jenis == 'aplikasisubmit_pengujian'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('sdppi')->table('aplikasisubmit_pengujian')->insert(
                         [
@@ -5872,7 +8432,12 @@ function setDataStaging($name, $jenis, $data)
                         ]
                     );
                 }
-                }elseif('terbitlhu_pengujian'){
+                }elseif($jenis == 'terbitlhu_pengujian'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('sdppi')->table('terbitlhu_pengujian')->insert(
                         ['id' => $data[$i][0],
@@ -5881,7 +8446,12 @@ function setDataStaging($name, $jenis, $data)
                         'jumlah' => $data[$i][3]],
                     );
                 }
-                }elseif('terbitsertifikat_kalibrasi'){
+                }elseif($jenis == 'terbitsertifikat_kalibrasi'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('sdppi')->table('terbitsertifikat_kalibrasi')->insert(
                         ['id' => $data[$i][0],
@@ -5890,7 +8460,12 @@ function setDataStaging($name, $jenis, $data)
                         'jumlah_sertifikat' => $data[$i][3]],
                     );
                 }
-                }elseif('terbitsertifikat_pengujian'){
+                }elseif($jenis == 'terbitsertifikat_pengujian'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('sdppi')->table('terbitsertifikat_pengujian')->insert(
                         ['id' => $data[$i][0],
@@ -5899,7 +8474,12 @@ function setDataStaging($name, $jenis, $data)
                         'jumlah_sertifikat' => $data[$i][3]],
                     );
                 }
-                }elseif('terbitsp2_kalibrasi'){
+                }elseif($jenis == 'terbitsp2_kalibrasi'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('sdppi')->table('terbitsp2_kalibrasi')->insert(
                         ['id' => $data[$i][0],
@@ -5907,7 +8487,12 @@ function setDataStaging($name, $jenis, $data)
                         'jumlah_sp2' => $data[$i][2]],
                     );
                 }
-                }elseif('terbitsp2_pengujian'){
+                }elseif($jenis == 'terbitsp2_pengujian'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('sdppi')->table('terbitsp2_pengujian')->insert(
                         ['id' => $data[$i][0],
@@ -5915,7 +8500,12 @@ function setDataStaging($name, $jenis, $data)
                         'jumlah_sp2' => $data[$i][2]],
                     );
                 }
-                }elseif('totalfitur_pengujian'){
+                }elseif($jenis == 'totalfitur_pengujian'){
+                    $database = DB::connection('sdppi')->getSchemaBuilder()->getColumnListing($jenis);
+                    $check = checkHeader($database, $data[0]);
+                    if ($check == false) {
+                        return $check;
+                    }
                     for ($i=1; $i < count($data); $i++) {
                     $result = DB::connection('sdppi')->table('totalfitur_pengujian')->insert(
                         ['id' => $data[$i][0],
@@ -5926,8 +8516,110 @@ function setDataStaging($name, $jenis, $data)
                     }
                 }
             break;
+        case 'staging_tiga':
+            if ($jenis == 'capaian_spektrum') {
+                $database = DB::connection('kominfo_staging3')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('kominfo_staging3')->table('capaian_spektrum')->insert(
+                        [
+                        'calculation' => $data[$i][0],
+                        'capaian' => $data[$i][1],
+                        'tahun' => $data[$i][2],
+                        'jumlah' => $data[$i][3],
+                        'created_at'=> now(),
+                        ]
+                    );
+                }
+            }elseif ($jenis == 'filing_new') {
+                $database = DB::connection('kominfo_staging3')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('kominfo_staging3')->table('filing_new')->insert(
+                        [
+                        'filing_satelit' => $data[$i][0],
+                        'pengelola' => $data[$i][1],
+                        'slot_orbit' => $data[$i][2],
+                        'tgl' => $data[$i][3],
+                        'created_at' => now(),
+                        ]
+                    );
+                }
+            }elseif ($jenis == 'satelit_filling') {
+                $database = DB::connection('kominfo_staging3')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('kominfo_staging3')->table('satelit_filling')->insert(
+                        [
+                            'kegunaan' => $data[$i][0],
+                            'manufaktur' => $data[$i][1],
+                            'nama_satelit' => $data[$i][2],
+                            'slot_orbit' => $data[$i][3],
+                            'tgl_luncur' => $data[$i][4],
+                            'tgl_luncur_sp' => $data[$i][5],
+                            'tgl_luncur_sp2' => $data[$i][6],
+                            'tempat_luncur' => $data[$i][7],
+                            'transponder' => $data[$i][8],
+                            'created_at' => now(),
+                        ]
+                    );
+                }
+            }elseif ($jenis == 'target_penambahan') {
+                $database = DB::connection('kominfo_staging3')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('kominfo_staging3')->table('target_penambahan')->insert(
+                        [
+                            'jenis' => $data[$i][0],
+                            'tahun' => $data[$i][1],
+                            'jumlah' => $data[$i][2],
+                            'created_at' => now(),
+                        ]
+                    );
+                }
+            }elseif ($jenis == 'target_realisasi') {
+                $database = DB::connection('kominfo_staging3')->getSchemaBuilder()->getColumnListing($jenis);
+                $check = checkHeader($database, $data[0]);
+                if ($check == false) {
+                    return $check;
+                }
+                for ($i=1; $i < count($data); $i++) {
+                    $result = DB::connection('kominfo_staging3')->table('target_realisasi')->insert(
+                        [
+                            'calculation1' => $data[$i][0],
+                            'calculation2' => $data[$i][1],
+                            'jenis_pnbp' => $data[$i][2],
+                            'kode' => $data[$i][3],
+                            'pivot' => $data[$i][4],
+                            'tahun' => $data[$i][5],
+                            'created_at' => now(),
+                        ]
+                    );
+                }
+            }
+            break;
         default:
             # code...
             break;
-    }
+    };
+
+}
+function checkHeader($arrayA, $arrayB)
+{
+    sort($arrayA);
+    sort($arrayB);
+
+    return $arrayA == $arrayB;
 }
