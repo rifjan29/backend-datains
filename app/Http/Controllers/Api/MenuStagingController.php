@@ -52,6 +52,7 @@ class MenuStagingController extends Controller
         try {
             return getMenuStaging($name, $jenis);
         } catch (Exception $e) {
+            // return $e;
             return response()->json(['message'=> 'terjadi kesalahan'],400);
         }
     }

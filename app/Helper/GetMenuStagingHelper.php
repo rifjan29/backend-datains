@@ -552,1147 +552,155 @@ function getMenuStaging($name, $jenis){
             return response()->json(['header' => $result,'data' => $data],200);
         }
     }elseif ($name == 'kominfo_simpeg') {
-        if ($jenis == '#Tableau_10_sid_00000494_4_Group') {
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_10_sid_00000494_4_Group');
-            $data= DB::connection('simpeg')->table('#Tableau_10_sid_00000494_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data],200);
-        }elseif($jenis == '#Tableau_10_sid_00000494_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_10_sid_00000494_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_10_sid_00000494_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_12_sid_00000492_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_12_sid_00000492_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_12_sid_00000492_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_12_sid_00000492_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_12_sid_00000492_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_12_sid_00000492_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_12_sid_00000496_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_12_sid_00000496_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_12_sid_00000496_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_12_sid_00000496_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_12_sid_00000496_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_12_sid_00000496_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_12_sid_00000496_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_12_sid_00000496_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_12_sid_00000496_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_12_sid_00000496_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_12_sid_00000496_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_12_sid_00000496_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_0000019B_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_0000019B_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_0000019B_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_000001EB_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_000001EB_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_000001EB_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_000001EB_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_000001EB_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_000001EB_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00000493_6_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00000493_6_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00000493_6_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00000537_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00000537_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00000537_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00000537_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00000537_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00000537_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00000556_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00000556_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00000556_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00000556_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00000556_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00000556_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00000556_6_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00000556_6_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00000556_6_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00000763_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00000763_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00000763_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00000763_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00000763_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00000763_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00002306_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00002306_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00002306_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00002306_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00002306_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00002306_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00002306_6_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00002306_6_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00002306_6_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_13_sid_00002306_7_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_13_sid_00002306_7_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_13_sid_00002306_7_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_14_sid_00000168_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_14_sid_00000168_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_14_sid_00000168_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_14_sid_00000175_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_14_sid_00000175_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_14_sid_00000175_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_14_sid_0000017E_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_14_sid_0000017E_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_14_sid_0000017E_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_14_sid_00000490_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_14_sid_00000490_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_14_sid_00000490_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_14_sid_00000490_6_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_14_sid_00000490_6_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_14_sid_00000490_6_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_14_sid_00000497_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_14_sid_00000497_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_14_sid_00000497_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_000001F0_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_000001F0_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_000001F0_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_000001F0_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_000001F0_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_000001F0_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000491_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000491_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000491_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000495_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000495_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000495_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000538_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000538_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000538_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000538_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000538_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000538_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000558_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000558_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000558_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000558_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000558_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000558_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000558_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000558_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000558_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000768_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000768_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000768_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000768_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000768_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000768_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_00000768_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_00000768_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_00000768_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_15_sid_0000230C_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_15_sid_0000230C_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_15_sid_0000230C_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_00000169_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_00000169_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_00000169_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_00000176_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_00000176_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_00000176_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_0000017F_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_0000017F_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_0000017F_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_000001A6_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_000001A6_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_000001A6_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_000001ED_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_000001ED_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_000001ED_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_00000499_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_00000499_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_00000499_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_00000559_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_00000559_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_00000559_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_00000559_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_00000559_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_00000559_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_00000559_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_00000559_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_00000559_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_0000076A_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_0000076A_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_0000076A_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_0000076A_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_0000076A_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_0000076A_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_16_sid_0000230A_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_16_sid_0000230A_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_16_sid_0000230A_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000172_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000172_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000172_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_000001F3_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_000001F3_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_000001F3_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_000001F3_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_000001F3_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_000001F3_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_000003A5_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_000003A5_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_000003A5_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000498_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000498_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000498_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000498_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000498_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000498_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000498_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000498_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000498_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000539_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000539_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000539_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000539_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000539_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000539_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000557_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000557_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000557_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000557_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000557_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000557_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000557_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000557_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000557_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000769_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000769_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000769_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00000769_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00000769_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00000769_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_00002313_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_00002313_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_00002313_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_17_sid_0000E204_3_Connect_CheckCreateTempTableCap'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_17_sid_0000E204_3_Connect_CheckCreateTempTableCap');
-            $data = DB::connection('simpeg')->table('#Tableau_17_sid_0000E204_3_Connect_CheckCreateTempTableCap')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_18_sid_000001F1_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_18_sid_000001F1_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_18_sid_000001F1_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_18_sid_000001F1_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_18_sid_000001F1_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_18_sid_000001F1_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_18_sid_0000049B_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_18_sid_0000049B_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_18_sid_0000049B_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_18_sid_0000049B_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_18_sid_0000049B_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_18_sid_0000049B_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_18_sid_0000049B_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_18_sid_0000049B_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_18_sid_0000049B_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_18_sid_000053B3_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_18_sid_000053B3_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_18_sid_000053B3_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_18_sid_000053B3_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_18_sid_000053B3_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_18_sid_000053B3_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_00000173_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_00000173_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_00000173_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_000001A9_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_000001A9_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_000001A9_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_000001EF_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_000001EF_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_000001EF_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_000001EF_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_000001EF_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_000001EF_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_000003A6_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_000003A6_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_000003A6_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_0000049A_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_0000049A_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_0000049A_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_0000049A_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_0000049A_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_0000049A_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_0000049A_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_0000049A_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_0000049A_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_00000540_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_00000540_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_00000540_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_0000055B_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_0000055B_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_0000055B_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_00000772_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_00000772_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_00000772_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_000053B0_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_000053B0_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_000053B0_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_000053B0_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_000053B0_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_000053B0_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_000053B0_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_000053B0_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_000053B0_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_19_sid_000053B0_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_19_sid_000053B0_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_19_sid_000053B0_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000001A3_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000001A3_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000001A3_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000001A3_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000001A3_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000001A3_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000001AC_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000001AC_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000001AC_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000001AC_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000001AC_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000001AC_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000001EE_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000001EE_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000001EE_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000001EE_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000001EE_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000001EE_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00000456_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00000456_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00000456_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00000456_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00000456_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00000456_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00000456_6_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00000456_6_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00000456_6_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00000456_7_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00000456_7_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00000456_7_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_0000049D_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_0000049D_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_0000049D_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_0000049D_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_0000049D_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_0000049D_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_0000053B_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_0000053B_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_0000053B_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_0000053B_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_0000053B_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_0000053B_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00000563_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00000563_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00000563_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00000563_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00000563_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00000563_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00000775_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00000775_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00000775_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00000775_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00000775_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00000775_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_00002309_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_00002309_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_00002309_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000053AF_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000053AF_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000053AF_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000053AF_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000053AF_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000053AF_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_20_sid_000053AF_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_20_sid_000053AF_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_20_sid_000053AF_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_00000097_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_00000097_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_00000097_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_000001A1_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_000001A1_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_000001A1_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_000001A1_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_000001A1_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_000001A1_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_000001A1_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_000001A1_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_000001A1_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_000001A8_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_000001A8_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_000001A8_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_000001EC_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_000001EC_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_000001EC_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_000001EC_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_000001EC_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_000001EC_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_0000049E_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_0000049E_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_0000049E_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_0000049E_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_0000049E_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_0000049E_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_00000565_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_00000565_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_00000565_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_00000565_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_00000565_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_00000565_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_00002314_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_00002314_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_00002314_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_00002314_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_00002314_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_00002314_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_000053B2_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_000053B2_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_000053B2_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_21_sid_000053B2_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_21_sid_000053B2_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_21_sid_000053B2_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_00000098_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_00000098_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_00000098_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000019F_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000019F_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000019F_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000019F_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000019F_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000019F_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_000001F2_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_000001F2_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_000001F2_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000045A_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000045A_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000045A_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000045A_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000045A_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000045A_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000045A_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000045A_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000045A_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000045A_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000045A_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000045A_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000049C_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000049C_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000049C_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_00000543_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_00000543_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_00000543_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_00000543_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_00000543_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_00000543_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_00000562_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_00000562_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_00000562_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_00000562_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_00000562_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_00000562_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_00000562_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_00000562_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_00000562_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000076E_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000076E_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000076E_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000076E_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000076E_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000076E_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000230F_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000230F_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000230F_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_0000230F_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_0000230F_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_0000230F_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_000053AE_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_000053AE_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_000053AE_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_000053AE_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_000053AE_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_000053AE_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_22_sid_000053AE_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_22_sid_000053AE_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_22_sid_000053AE_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_00000099_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_00000099_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_00000099_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_000001A4_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_000001A4_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_000001A4_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_000001A4_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_000001A4_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_000001A4_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_000001A4_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_000001A4_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_000001A4_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_000001AE_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_000001AE_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_000001AE_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_000001AE_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_000001AE_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_000001AE_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000049F_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000049F_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000049F_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000049F_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000049F_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000049F_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000049F_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000049F_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000049F_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000049F_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000049F_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000049F_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000053C_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000053C_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000053C_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000053C_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000053C_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000053C_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000055F_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000055F_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000055F_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000055F_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000055F_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000055F_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_0000055F_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_0000055F_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_0000055F_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_23_sid_00002308_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_23_sid_00002308_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_23_sid_00002308_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000001A0_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000001A0_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000001A0_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000001A0_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000001A0_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000001A0_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000001A0_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000001A0_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000001A0_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000001A0_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000001A0_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000001A0_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000001AD_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000001AD_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000001AD_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000001F9_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000001F9_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000001F9_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000001F9_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000001F9_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000001F9_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000004A1_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000004A1_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000004A1_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000004A1_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000004A1_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000004A1_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000004A1_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000004A1_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000004A1_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000004A1_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000004A1_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000004A1_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_0000053E_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_0000053E_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_0000053E_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_0000055E_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_0000055E_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_0000055E_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_0000055E_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_0000055E_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_0000055E_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_0000076C_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_0000076C_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_0000076C_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000053B1_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000053B1_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000053B1_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_24_sid_000053B1_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_24_sid_000053B1_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_24_sid_000053B1_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_0000009A_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_0000009A_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_0000009A_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_000001A2_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_000001A2_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_000001A2_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_000001A2_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_000001A2_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_000001A2_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_000001FA_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_000001FA_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_000001FA_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_000001FA_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_000001FA_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_000001FA_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_000004A0_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_000004A0_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_000004A0_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_0000053D_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_0000053D_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_0000053D_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_0000053D_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_0000053D_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_0000053D_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_00000564_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_00000564_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_00000564_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_00000774_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_00000774_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_00000774_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_25_sid_00000774_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_25_sid_00000774_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_25_sid_00000774_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_26_sid_0000009B_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_26_sid_0000009B_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_26_sid_0000009B_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_26_sid_000001F4_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_26_sid_000001F4_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_26_sid_000001F4_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_26_sid_00000545_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_26_sid_00000545_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_26_sid_00000545_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_26_sid_00000545_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_26_sid_00000545_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_26_sid_00000545_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_26_sid_0000055A_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_26_sid_0000055A_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_26_sid_0000055A_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_26_sid_00000773_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_26_sid_00000773_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_26_sid_00000773_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_26_sid_00002307_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_26_sid_00002307_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_26_sid_00002307_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_26_sid_00002307_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_26_sid_00002307_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_26_sid_00002307_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_27_sid_0000009C_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_27_sid_0000009C_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_27_sid_0000009C_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_27_sid_000001F5_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_27_sid_000001F5_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_27_sid_000001F5_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_27_sid_00000542_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_27_sid_00000542_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_27_sid_00000542_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_27_sid_00000542_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_27_sid_00000542_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_27_sid_00000542_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_27_sid_00000561_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_27_sid_00000561_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_27_sid_00000561_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_27_sid_00000561_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_27_sid_00000561_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_27_sid_00000561_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_27_sid_0000076B_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_27_sid_0000076B_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_27_sid_0000076B_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_28_sid_0000009D_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_28_sid_0000009D_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_28_sid_0000009D_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_28_sid_000001F8_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_28_sid_000001F8_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_28_sid_000001F8_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_28_sid_000001F8_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_28_sid_000001F8_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_28_sid_000001F8_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_28_sid_0000053A_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_28_sid_0000053A_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_28_sid_0000053A_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_28_sid_00000560_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_28_sid_00000560_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_28_sid_00000560_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_28_sid_00000776_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_28_sid_00000776_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_28_sid_00000776_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_28_sid_0000230D_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_28_sid_0000230D_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_28_sid_0000230D_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_29_sid_000001F6_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_29_sid_000001F6_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_29_sid_000001F6_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_29_sid_00000544_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_29_sid_00000544_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_29_sid_00000544_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_29_sid_00000544_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_29_sid_00000544_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_29_sid_00000544_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_29_sid_00000544_3_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_29_sid_00000544_3_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_29_sid_00000544_3_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_29_sid_0000055D_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_29_sid_0000055D_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_29_sid_0000055D_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_29_sid_0000076F_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_29_sid_0000076F_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_29_sid_0000076F_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_30_sid_00000541_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_30_sid_00000541_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_30_sid_00000541_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_30_sid_00000541_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_30_sid_00000541_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_30_sid_00000541_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_30_sid_0000055C_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_30_sid_0000055C_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_30_sid_0000055C_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_30_sid_00000770_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_30_sid_00000770_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_30_sid_00000770_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_30_sid_00000770_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_30_sid_00000770_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_30_sid_00000770_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_31_sid_0000053F_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_31_sid_0000053F_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_31_sid_0000053F_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_31_sid_0000053F_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_31_sid_0000053F_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_31_sid_0000053F_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_37_sid_00000203_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_37_sid_00000203_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_37_sid_00000203_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_37_sid_00000203_5_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_37_sid_00000203_5_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_37_sid_00000203_5_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_38_sid_00000204_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_38_sid_00000204_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_38_sid_00000204_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_38_sid_00000204_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_38_sid_00000204_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_38_sid_00000204_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_39_sid_00000206_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_39_sid_00000206_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_39_sid_00000206_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_39_sid_00000206_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_39_sid_00000206_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_39_sid_00000206_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_40_sid_00000205_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_40_sid_00000205_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_40_sid_00000205_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_40_sid_00000205_2_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_40_sid_00000205_2_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_40_sid_00000205_2_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_41_sid_00000207_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_41_sid_00000207_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_41_sid_00000207_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_42_sid_00000208_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_42_sid_00000208_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_42_sid_00000208_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_5_sid_0000005B_3_Connect_CheckCreateTempTableCap'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_5_sid_0000005B_3_Connect_CheckCreateTempTableCap');
-            $data = DB::connection('simpeg')->table('#Tableau_5_sid_0000005B_3_Connect_CheckCreateTempTableCap')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_6_sid_00000192_4_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_6_sid_00000192_4_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_6_sid_00000192_4_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_8_sid_00000193_1_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_8_sid_00000193_1_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_8_sid_00000193_1_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_8_sid_00000441_10_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_8_sid_00000441_10_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_8_sid_00000441_10_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_8_sid_00000441_8_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_8_sid_00000441_8_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_8_sid_00000441_8_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-        }elseif($jenis == '#Tableau_8_sid_00000441_9_Group'){
-            $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('#Tableau_8_sid_00000441_9_Group');
-            $data = DB::connection('simpeg')->table('#Tableau_8_sid_00000441_9_Group')->get();
-            return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' riwayat_pendidikan'){
+       if($jenis == 'riwayat_pendidikan'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('riwayat_pendidikan');
         $data = DB::connection('simpeg')->table('riwayat_pendidikan')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' t_pns'){
+       }elseif($jenis == 't_pns'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('t_pns');
         $data = DB::connection('simpeg')->table('t_pns')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_angka_kredit'){
+       }elseif($jenis == 'ta_angka_kredit'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_angka_kredit');
         $data = DB::connection('simpeg')->table('ta_angka_kredit')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_bagian'){
+       }elseif($jenis == 'ta_bagian'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_bagian');
         $data = DB::connection('simpeg')->table('ta_bagian')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_bahasa'){
+       }elseif($jenis == 'ta_bahasa'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_bahasa');
         $data = DB::connection('simpeg')->table('ta_bahasa')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_cabang'){
+       }elseif($jenis == 'ta_cabang'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_cabang');
         $data = DB::connection('simpeg')->table('ta_cabang')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_cpns'){
+       }elseif($jenis == 'ta_cpns'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_cpns');
         $data = DB::connection('simpeg')->table('ta_cpns')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_departemen'){
+       }elseif($jenis == 'ta_departemen'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_departemen');
         $data = DB::connection('simpeg')->table('ta_departemen')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_diklat_eselon'){
+       }elseif($jenis == 'ta_diklat_eselon'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_diklat_eselon');
         $data = DB::connection('simpeg')->table('ta_diklat_eselon')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_diklat_fungsional'){
+       }elseif($jenis == 'ta_diklat_fungsional'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_diklat_fungsional');
         $data = DB::connection('simpeg')->table('ta_diklat_fungsional')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_diklat_struktural'){
+       }elseif($jenis == 'ta_diklat_struktural'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_diklat_struktural');
         $data = DB::connection('simpeg')->table('ta_diklat_struktural')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_diklat_teknis'){
+       }elseif($jenis == 'ta_diklat_teknis'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_diklat_teknis');
         $data = DB::connection('simpeg')->table('ta_diklat_teknis')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_golongan'){
+       }elseif($jenis == 'ta_golongan'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_golongan');
         $data = DB::connection('simpeg')->table('ta_golongan')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_jabatan'){
+       }elseif($jenis == 'ta_jabatan'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_jabatan');
         $data = DB::connection('simpeg')->table('ta_jabatan')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_jasa'){
+       }elseif($jenis == 'ta_jasa'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_jasa');
         $data = DB::connection('simpeg')->table('ta_jasa')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_jenis_jabatan'){
+       }elseif($jenis == 'ta_jenis_jabatan'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_jenis_jabatan');
         $data = DB::connection('simpeg')->table('ta_jenis_jabatan')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_jenis_jasa'){
+       }elseif($jenis == 'ta_jenis_jasa'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_jenis_jasa');
         $data = DB::connection('simpeg')->table('ta_jenis_jasa')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_jenis_kenaikan_pangkat'){
+       }elseif($jenis == 'ta_jenis_kenaikan_pangkat'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_jenis_kenaikan_pangkat');
         $data = DB::connection('simpeg')->table('ta_jenis_kenaikan_pangkat')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_jurusan'){
+       }elseif($jenis == 'ta_jurusan'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_jurusan');
         $data = DB::connection('simpeg')->table('ta_jurusan')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_karyawan'){
+       }elseif($jenis == 'ta_karyawan'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_karyawan');
         $data = DB::connection('simpeg')->table('ta_karyawan')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_kedudukan_pegawai'){
+       }elseif($jenis == 'ta_kedudukan_pegawai'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_kedudukan_pegawai');
         $data = DB::connection('simpeg')->table('ta_kedudukan_pegawai')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_pendidikan'){
+       }elseif($jenis == 'ta_pendidikan'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_pendidikan');
         $data = DB::connection('simpeg')->table('ta_pendidikan')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_penilaian'){
+       }elseif($jenis == 'ta_penilaian'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_penilaian');
         $data = DB::connection('simpeg')->table('ta_penilaian')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_riwayat_diklat_fungsional'){
+       }elseif($jenis == 'ta_riwayat_diklat_fungsional'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_riwayat_diklat_fungsional');
         $data = DB::connection('simpeg')->table('ta_riwayat_diklat_fungsional')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_riwayat_diklat_struktural'){
+       }elseif($jenis == 'ta_riwayat_diklat_struktural'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_riwayat_diklat_struktural');
         $data = DB::connection('simpeg')->table('ta_riwayat_diklat_struktural')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_riwayat_diklat_teknis'){
+       }elseif($jenis == 'ta_riwayat_diklat_teknis'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_riwayat_diklat_teknis');
         $data = DB::connection('simpeg')->table('ta_riwayat_diklat_teknis')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_riwayat_seminar'){
+       }elseif($jenis == 'ta_riwayat_seminar'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_riwayat_seminar');
         $data = DB::connection('simpeg')->table('ta_riwayat_seminar')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_sklain'){
+       }elseif($jenis == 'ta_sklain'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_sklain');
         $data = DB::connection('simpeg')->table('ta_sklain')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_skp'){
+       }elseif($jenis == 'ta_skp'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_skp');
         $data = DB::connection('simpeg')->table('ta_skp')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_status_pegawai'){
+       }elseif($jenis == 'ta_status_pegawai'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_status_pegawai');
         $data = DB::connection('simpeg')->table('ta_status_pegawai')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_stlud'){
+       }elseif($jenis == 'ta_stlud'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_stlud');
         $data = DB::connection('simpeg')->table('ta_stlud')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_subbagian'){
+       }elseif($jenis == 'ta_subbagian'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_subbagian');
         $data = DB::connection('simpeg')->table('ta_subbagian')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_tgs_luar_negri'){
+       }elseif($jenis == 'ta_tgs_luar_negri'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_tgs_luar_negri');
         $data = DB::connection('simpeg')->table('ta_tgs_luar_negri')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_tim_kerja'){
+       }elseif($jenis == 'ta_tim_kerja'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_tim_kerja');
         $data = DB::connection('simpeg')->table('ta_tim_kerja')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
-       }elseif($jenis == ' ta_unit'){
+       }elseif($jenis == 'ta_unit'){
         $result = DB::connection('simpeg')->getSchemaBuilder()->getColumnListing('ta_unit');
         $data = DB::connection('simpeg')->table('ta_unit')->get();
         return response()->json(['header' => $result, 'data' => $data], 200);
        }
     }elseif ($name == 'kominfo_staging') {
-        if ($jenis == '#Tableau_48_sid_00007B36_4_Group') {
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('#Tableau_48_sid_00007B36_4_Group');
-            $data = DB::connection('staging')->table('#Tableau_48_sid_00007B36_4_Group')->get();
-            return response()->json(['header' => $result,'data' => $data], 200);
-        }elseif($jenis == '#Tableau_48_sid_00007B36_4_Group'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('#Tableau_48_sid_00007B36_4_Group');
-            $data = DB::connection('staging')->table('#Tableau_48_sid_00007B36_4_Group')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == '#Tableau_69_sid_00007B3E_1_Group'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('#Tableau_69_sid_00007B3E_1_Group');
-            $data = DB::connection('staging')->table('#Tableau_69_sid_00007B3E_1_Group')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'data_mon_hf'){
+        if($jenis == 'data_mon_hf'){
             $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('data_mon_hf');
             $data = DB::connection('staging')->table('data_mon_hf')->get();
             return response()->json(['header' => $result,'data' => $data],200);
         }elseif($jenis == 'data_sertifikasi'){
             $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('data_sertifikasi');
-            $data = DB::connection('staging')->table('data_sertifikasi')->get();
+            $data = DB::connection('staging')->table('data_sertifikasi')->take(1990);
             return response()->json(['header' => $result,'data' => $data],200);
         }elseif($jenis == 'disnaker_angkatan_kerja_jenis_kelamin'){
             $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('disnaker_angkatan_kerja_jenis_kelamin');
@@ -1910,62 +918,6 @@ function getMenuStaging($name, $jenis){
             $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('tibnas_dan_rol');
             $data = DB::connection('staging')->table('tibnas_dan_rol')->get();
             return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_disabilitas'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_disabilitas');
-            $data = DB::connection('staging')->table('ukm_disabilitas')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_jenis_kelamin'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_jenis_kelamin');
-            $data = DB::connection('staging')->table('ukm_jenis_kelamin')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_kabupaten'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_kabupaten');
-            $data = DB::connection('staging')->table('ukm_kabupaten')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_kelas'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_kelas');
-            $data = DB::connection('staging')->table('ukm_kelas')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_klasifikasi'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_klasifikasi');
-            $data = DB::connection('staging')->table('ukm_klasifikasi')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_laporan_dua'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_laporan_dua');
-            $data = DB::connection('staging')->table('ukm_laporan_dua')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_laporan_empat'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_laporan_empat');
-            $data = DB::connection('staging')->table('ukm_laporan_empat')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_laporan_enam'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_laporan_enam');
-            $data = DB::connection('staging')->table('ukm_laporan_enam')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_laporan_lima'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_laporan_lima');
-            $data = DB::connection('staging')->table('ukm_laporan_lima')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_laporan_satu'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_laporan_satu');
-            $data = DB::connection('staging')->table('ukm_laporan_satu')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_laporan_tiga'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_laporan_tiga');
-            $data = DB::connection('staging')->table('ukm_laporan_tiga')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_pendidikan'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_pendidikan');
-            $data = DB::connection('staging')->table('ukm_pendidikan')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_sektor_ekraf'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_sektor_ekraf');
-            $data = DB::connection('staging')->table('ukm_sektor_ekraf')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
-        }elseif($jenis == 'ukm_sektor_group'){
-            $result = DB::connection('staging')->getSchemaBuilder()->getColumnListing('ukm_sektor_group');
-            $data = DB::connection('staging')->table('ukm_sektor_group')->get();
-            return response()->json(['header' => $result,'data' => $data],200);
         }
     }elseif ($name == 'kominfo_staging2') {
         if($jenis == 'alat_perangkat'){
@@ -2087,6 +1039,43 @@ function getMenuStaging($name, $jenis){
         }elseif($jenis == 'upt_personil_wsbk_perpanas'){
             $result = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing('upt_personil_wsbk_perpanas');
             $data = DB::connection('staging_dua')->table('upt_personil_wsbk_perpanas')->get();
+            return response()->json(['header' => $result,'data' => $data],200);
+        }
+    }elseif($name = 'kominfo_staging3'){
+        if ($jenis == 'capaian_spektrum') {
+            $result = DB::connection('staging_tiga')->getSchemaBuilder()->getColumnListing('capaian_spektrum');
+            $data = DB::connection('staging_tiga')->table($jenis)->get();
+            return response()->json(['header' => $result,'data' => $data],200);
+        }elseif($jenis == 'capaian_spektrum' ) {
+            $result = DB::connection('staging_tiga')->getSchemaBuilder()->getColumnListing($jenis);
+            $data = DB::connection('staging_tiga')->table($jenis)->get();
+            return response()->json(['header' => $result,'data' => $data],200);
+        }elseif($jenis == 'dataset_jumlah_kab_termonitor' ) {
+            $result = DB::connection('staging_tiga')->getSchemaBuilder()->getColumnListing($jenis);
+            $data = DB::connection('staging_tiga')->table($jenis)->get();
+            return response()->json(['header' => $result,'data' => $data],200);
+        }elseif($jenis == 'filing_new' ) {
+            $result = DB::connection('staging_tiga')->getSchemaBuilder()->getColumnListing($jenis);
+            $data = DB::connection('staging_tiga')->table($jenis)->get();
+            return response()->json(['header' => $result,'data' => $data],200);
+        }elseif($jenis == 'monitoring_hf_tetap' ) {
+            $result = DB::connection('staging_tiga')->getSchemaBuilder()->getColumnListing($jenis);
+            $data = DB::connection('staging_tiga')->table($jenis)->get();
+            return response()->json(['header' => $result,'data' => $data],200);
+
+        }elseif($jenis == 'satelit_filling' ) {
+            $result = DB::connection('staging_tiga')->getSchemaBuilder()->getColumnListing($jenis);
+            $data = DB::connection('staging_tiga')->table($jenis)->get();
+            return response()->json(['header' => $result,'data' => $data],200);
+
+        }elseif($jenis == 'target_penambahan' ) {
+            $result = DB::connection('staging_tiga')->getSchemaBuilder()->getColumnListing($jenis);
+            $data = DB::connection('staging_tiga')->table($jenis)->get();
+            return response()->json(['header' => $result,'data' => $data],200);
+
+        }elseif($jenis == 'target_realisasi2' ) {
+            $result = DB::connection('staging_tiga')->getSchemaBuilder()->getColumnListing($jenis);
+            $data = DB::connection('staging_tiga')->table($jenis)->get();
             return response()->json(['header' => $result,'data' => $data],200);
         }
     }else{
