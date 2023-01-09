@@ -3,9 +3,9 @@
 function getMenuStaging($name, $jenis){
     if ($name == 'kominfo_ditops') {
         if ($jenis == 'bts_ipfr') {
-               $header = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('bts_ipfr');
-               $data = DB::connection('ditops')->table('bts_ipfr')->get();
-            return response()->json([
+                $header = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('bts_ipfr');
+                $data = DB::connection('ditops')->table('bts_ipfr')->get();
+                return response()->json([
                                     'header' => $header,
                                     'data' => $data,
                                     ],

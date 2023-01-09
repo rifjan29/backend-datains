@@ -41,8 +41,9 @@
         "files": [
 
             "app/Helper/MenuStagingHelper.php",
-            "app/Helper/GetMenuStagingHelper.php"
-
+            "app/Helper/GetMenuStagingHelper.php",
+            "app/Helper/EditMenuStagingHelper.php",
+            "app/Helper/DeleteMenuStagingHelper.php"
         ]
     },
     "autoload-dev": {

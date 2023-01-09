@@ -42,6 +42,9 @@ Route::group(['prefix' => 'v1'], function() {
     // Menu staging / datalake
     Route::get('menu-staging/{name}/{jenis}',[MenuStagingController::class,'getData']);
     Route::post('upload-data',[MenuStagingController::class,'upload']);
+    Route::get('edit/{name}/{jenis}/{id}',[MenuStagingController::class,'edit']);
+    Route::post('update/{name}/{jenis}/{id}',[MenuStagingController::class,'update']);
+    Route::delete('delete/{name}/{jenis}/{id}',[MenuStagingController::class,'delete']);
 
     Route::get('menus/flat', [MenuController::class, 'flatMenu']);
     Route::resource('menus', MenuController::class);

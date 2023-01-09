@@ -9,7 +9,7 @@ function setDataStaging($name, $jenis, $data)
     $now = Carbon::now();
     switch ($name) {
         case 'kominfo_ditops':
-        if ($jenis == 'bts_ipfr') {
+            if ($jenis == 'bts_ipfr') {
                 $database = DB::connection('ditops')->getSchemaBuilder()->getColumnListing('bts_ipfr');
                 $check = checkHeader($database, $data[0]);
                 if ($check == false) {
@@ -4749,7 +4749,7 @@ function setDataStaging($name, $jenis, $data)
                 return $result;
             }
             break;
-        case 'staging2':
+        case 'kominfo_staging2':
             if ($jenis == 'alat_perangkat') {
                 $database = DB::connection('staging_dua')->getSchemaBuilder()->getColumnListing($jenis);
                 $check = checkHeader($database, $data[0]);
@@ -5271,7 +5271,7 @@ function setDataStaging($name, $jenis, $data)
                 return $result;
             }
             break;
-        case 'staging_tiga':
+        case 'kominfo_staging3':
             if ($jenis == 'capaian_spektrum') {
                 $database = DB::connection('kominfo_staging3')->getSchemaBuilder()->getColumnListing($jenis);
                 $check = checkHeader($database, $data[0]);
